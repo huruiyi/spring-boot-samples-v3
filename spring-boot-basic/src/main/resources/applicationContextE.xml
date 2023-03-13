@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置DBCP连接池 -->
+    <bean id="basicDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/springjdbc"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!-- 配置Spring的JDBC的模板 -->
+    <bean id="jdbcTemplate_dbcp" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="basicDataSource"/>
+    </bean>
+
+    <!-- 配置C3P0连接池 -->
+    <bean id="c3poDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/springjdbc"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!-- 配置Spring的C3P0的模板 -->
+    <bean id="jdbcTemplate_c3p0" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="c3poDataSource"/>
+    </bean>
+</beans>

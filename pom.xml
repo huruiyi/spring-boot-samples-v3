@@ -18,6 +18,7 @@
     </parent>
 
     <modules>
+        <module>spring-boot-basic</module>
         <module>spring-boot-openapi</module>
         <module>spring-boot-session-redis</module>
         <module>spring-boot-session-mongo</module>
