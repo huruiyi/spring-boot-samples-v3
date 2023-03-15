@@ -20,7 +20,9 @@
     <modules>
         <module>spring-boot-basic</module>
         <module>spring-boot-openapi</module>
+        <module>spring-boot-session-jdbc</module>
         <module>spring-boot-session-redis</module>
         <module>spring-boot-session-mongo</module>
+        <module>spring-boot-tomcat</module>
     </modules>
 </project>
