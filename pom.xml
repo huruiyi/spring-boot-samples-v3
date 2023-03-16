@@ -24,5 +24,6 @@
         <module>spring-boot-session-redis</module>
         <module>spring-boot-session-mongo</module>
         <module>spring-boot-tomcat</module>
+        <module>spring-boot-tomcat-jsp</module>
     </modules>
 </project>
