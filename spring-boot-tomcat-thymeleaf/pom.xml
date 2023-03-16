@@ -10,10 +10,10 @@
 	</parent>
 
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-tomcat-jsp</artifactId>
+	<artifactId>spring-boot-tomcat-thymeleaf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-tomcat-jsp</name>
-	<description>spring-boot-tomcat-jsp</description>
+	<description>spring-boot-tomcat-thymeleaf</description>
 
 	<packaging>war</packaging>
 
@@ -28,18 +28,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
-			<version>3.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>10.1.7</version>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>

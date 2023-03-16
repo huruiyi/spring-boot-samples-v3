@@ -4,6 +4,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.2.3/css/bootstrap.min.css"/>
+<script type="text/javascript" src="webjars/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/init.js"></script>
 
 <body>
 	<c:url value="/resources/text.txt" var="url"/>

@@ -25,5 +25,6 @@
         <module>spring-boot-session-mongo</module>
         <module>spring-boot-tomcat</module>
         <module>spring-boot-tomcat-jsp</module>
+        <module>spring-boot-tomcat-thymeleaf</module>
     </modules>
 </project>
