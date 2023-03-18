@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootOpenapiApplication {
 
 	/**
-	 * http://localhost:8080/swagger-ui/index.html
-	 * @param args
+	 * <a href="http://localhost:8080/swagger-ui/index.html">...</a>
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootOpenapiApplication.class, args);

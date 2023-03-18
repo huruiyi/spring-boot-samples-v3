@@ -45,8 +45,6 @@ public class SampleSessionJdbcApplication22000 implements WebServerFactoryCustom
 			 root   html;
 		 }
 	 }
-
-	 * @param args
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SampleSessionJdbcApplication22000.class);
