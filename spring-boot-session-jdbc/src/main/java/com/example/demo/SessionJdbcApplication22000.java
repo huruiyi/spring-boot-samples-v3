@@ -22,7 +22,7 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 
 @SpringBootApplication
-public class SampleSessionJdbcApplication22000 implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+public class SessionJdbcApplication22000 implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
 	/**
 	 upstream mySite {
@@ -47,7 +47,7 @@ public class SampleSessionJdbcApplication22000 implements WebServerFactoryCustom
 	 }
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(SampleSessionJdbcApplication22000.class);
+		SpringApplication.run(SessionJdbcApplication22000.class);
 	}
 
 	@Override

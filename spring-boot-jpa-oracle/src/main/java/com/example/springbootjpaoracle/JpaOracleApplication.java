@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner {
+public class JpaOracleApplication implements CommandLineRunner {
 
   private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -22,7 +22,7 @@ public class DemoApplication implements CommandLineRunner {
   private StudentRepository studentRepository;
 
   public static void main(String[] args) {
-    SpringApplication.run(DemoApplication.class, args);
+    SpringApplication.run(JpaOracleApplication.class, args);
   }
 
   @Override

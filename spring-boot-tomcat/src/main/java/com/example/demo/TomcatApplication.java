@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class SpringBootTomcatApplication {
+public class TomcatApplication {
 
-    private static final Log logger = LogFactory.getLog(SpringBootTomcatApplication.class);
+    private static final Log logger = LogFactory.getLog(TomcatApplication.class);
 
     @Bean
     protected ServletContextListener listener() {
@@ -30,7 +30,7 @@ public class SpringBootTomcatApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootTomcatApplication.class, args);
+        SpringApplication.run(TomcatApplication.class, args);
     }
 
 }

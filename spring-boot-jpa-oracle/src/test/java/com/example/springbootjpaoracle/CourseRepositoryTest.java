@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 
-@SpringBootTest(classes = DemoApplication.class)
+@SpringBootTest(classes = JpaOracleApplication.class)
 public class CourseRepositoryTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());

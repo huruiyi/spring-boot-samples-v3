@@ -6,10 +6,10 @@ import org.springframework.session.data.mongo.config.annotation.web.http.EnableM
 
 @SpringBootApplication
 @EnableMongoHttpSession
-public class SpringBootSessionRedisApplication {
+public class SessionMongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootSessionRedisApplication.class, args);
+		SpringApplication.run(SessionMongoApplication.class, args);
 	}
 
 }
