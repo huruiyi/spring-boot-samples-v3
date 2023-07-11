@@ -1,5 +1,6 @@
 package com.example.springbootjpaoracle.repository;
 
+import com.example.springbootjpaoracle.entity.Course;
 import com.example.springbootjpaoracle.entity.Passport;
 import com.example.springbootjpaoracle.entity.Student;
 import jakarta.persistence.EntityManager;
@@ -65,6 +66,27 @@ public class StudentRepository {
         //Database Operation 4 - update student
         student.setName("Ranga - updated");
         //Persistence Context (student++ , passport++)
+    }
+
+    public void insertHardcodedStudentAndCourse() {
+        Student student = new Student("Jack");
+        Course course = new Course("Microservices in 100 Steps");
+        em.persist(student);
+        em.persist(course);
+
+        student.addCourse(course);
+        course.addStudent(student);
+        em.persist(student);
+    }
+
+    public void insertStudentAndCourse(Student student, Course course) {
+        //Student student = new Student("Jack");
+        //Course course = new Course("Microservices in 100 Steps");
+        student.addCourse(course);
+        course.addStudent(student);
+
+        em.persist(student);
+        em.persist(course);
     }
 
 }
