@@ -46,23 +46,33 @@ public class RepositoryTest {
   PassportRepository passportRepository;
 
   @Test
-  public void pageTest() {
+  void findAll() {
+    Iterable<Review> reviews = reviewRepository.findAll();
+    reviews.forEach(item -> {
+      System.out.println(item.toString());
+    });
+  }
 
-//    1:
-    // Iterable<Review> reviews = reviewRepository.findAll();
+  @Test
+  void findAll_V2() {
+    Iterable<Review> reviews = reviewRepository.findAll(Sort.by(Direction.DESC, "rating"));
+    reviews.forEach(item -> {
+      System.out.println(item.toString());
+    });
+  }
 
-    //2:
-    // Iterable<Review>   reviews = reviewRepository.findAll(Sort.by(Direction.DESC, "rating"));
-
-    //3:
+  @Test
+  void findAll_V3() {
     //Pageable pageable = Pageable.ofSize(5);
-//    Pageable pageable = PageRequest.of(2, 5, Sort.by(Direction.DESC, "rating"));
-//    Iterable<Review> reviews = reviewRepository.findAll(pageable);
-//    reviews.forEach(item->{
-//      System.out.println(item.toString());
-//    });
-//
+    Pageable pageable = PageRequest.of(2, 5, Sort.by(Direction.DESC, "rating"));
+    Iterable<Review> reviews = reviewRepository.findAll(pageable);
+    reviews.forEach(item -> {
+      System.out.println(item.toString());
+    });
+  }
 
+  @Test
+  public void pageTest() {
     Specification<Review> specification = (root, query, criteriaBuilder) -> {
       List<Predicate> predicatesList = new ArrayList<>();
 
@@ -85,35 +95,33 @@ public class RepositoryTest {
   }
 
 
-  /**
-   * 一对一测试:通过学生找身份证信息
-   */
   @Test
   @Transactional
-  public void retrieveStudentAndPassportDetails() {
+  public void retrieveStudentAndPassportDetails_retrievePassportAndAssociatedStudent() {
+    //通过学生找身份证信息
     Student student = studentV2Repository.findById(20001L).get();
-    logger.info("student -> {}", student);
-    logger.info("passport -> {}", student.getPassport());
-  }
+    logger.info("1-student -> {}", student);
+    logger.info("1-passport -> {}", student.getPassport());
 
-  /**
-   * 一对一测试:通过身份证找学生信息
-   */
-  @Test
-  @Transactional
-  public void retrievePassportAndAssociatedStudent() {
+    //通过身份证找学生信息
     Passport passport = passportRepository.findById(40001l).get();
-    logger.info("passport -> {}", passport);
-    logger.info("student -> {}", passport.getStudent());
+    logger.info("2-passport -> {}", passport);
+    logger.info("2-student -> {}", passport.getStudent());
   }
-
 
   @Test
   @Transactional
   public void retrieveStudentAndCourses() {
     Student student = studentV2Repository.findById(20001L).get();
     logger.info("student -> {}", student);
-    logger.info("courses -> {}", student.getCourses());
+    List<Course> courses = student.getCourses();
+    courses.forEach(course -> {
+      logger.info("--course -> {}", course);
+      List<Review> reviews = course.getReviews();
+      reviews.forEach(review -> {
+        logger.info("------review -> {}", review);
+      });
+    });
   }
 
   @Test

@@ -14,79 +14,78 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class StudentRepository {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+  private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    EntityManager em;
+  @Autowired
+  EntityManager em;
 
-    public Student findById(Long id) {
-        return em.find(Student.class, id);
+  public Student findById(Long id) {
+    return em.find(Student.class, id);
+  }
+
+  public Student save(Student student) {
+
+    if (student.getId() == null) {
+      em.persist(student);
+    } else {
+      em.merge(student);
     }
 
-    public Student save(Student student) {
+    return student;
+  }
 
-        if (student.getId() == null) {
-            em.persist(student);
-        } else {
-            em.merge(student);
-        }
+  public void deleteById(Long id) {
+    Student student = findById(id);
+    em.remove(student);
+  }
 
-        return student;
-    }
+  public void saveStudentWithPassport() {
+    Passport passport = new Passport("Z123456");
+    em.persist(passport);
 
-    public void deleteById(Long id) {
-        Student student = findById(id);
-        em.remove(student);
-    }
+    Student student = new Student("Mike");
 
-    public void saveStudentWithPassport() {
-        Passport passport = new Passport("Z123456");
-        em.persist(passport);
+    student.setPassport(passport);
+    em.persist(student);
+  }
 
-        Student student = new Student("Mike");
+  public void someOperationToUnderstandPersistenceContext() {
+    //Database Operation 1 - Retrieve student
+    Student student = em.find(Student.class, 20001L);
+    //Persistence Context (student)
 
-        student.setPassport(passport);
-        em.persist(student);
-    }
+    //Database Operation 2 - Retrieve passport
+    Passport passport = student.getPassport();
+    //Persistence Context (student, passport)
 
-    public void someOperationToUnderstandPersistenceContext() {
-        //Database Operation 1 - Retrieve student
-        Student student = em.find(Student.class, 20001L);
-        //Persistence Context (student)
+    //Database Operation 3 - update passport
+    passport.setNo("E123457");
+    //Persistence Context (student, passport++)
 
+    //Database Operation 4 - update student
+    student.setName("Ranga - updated");
+    //Persistence Context (student++ , passport++)
+  }
 
-        //Database Operation 2 - Retrieve passport
-        Passport passport = student.getPassport();
-        //Persistence Context (student, passport)
+  public void insertHardcodedStudentAndCourse() {
+    Student student = new Student("Jack");
+    Course course = new Course("Microservices in 100 Steps");
+    em.persist(student);
+    em.persist(course);
 
-        //Database Operation 3 - update passport
-        passport.setNo("E123457");
-        //Persistence Context (student, passport++)
+    student.addCourse(course);
+    course.addStudent(student);
+    em.persist(student);
+  }
 
-        //Database Operation 4 - update student
-        student.setName("Ranga - updated");
-        //Persistence Context (student++ , passport++)
-    }
+  public void insertStudentAndCourse(Student student, Course course) {
+    //-Student student = new Student("Jack");
+    //-Course course = new Course("Microservices in 100 Steps");
+    student.addCourse(course);
+    course.addStudent(student);
 
-    public void insertHardcodedStudentAndCourse() {
-        Student student = new Student("Jack");
-        Course course = new Course("Microservices in 100 Steps");
-        em.persist(student);
-        em.persist(course);
-
-        student.addCourse(course);
-        course.addStudent(student);
-        em.persist(student);
-    }
-
-    public void insertStudentAndCourse(Student student, Course course) {
-        //Student student = new Student("Jack");
-        //Course course = new Course("Microservices in 100 Steps");
-        student.addCourse(course);
-        course.addStudent(student);
-
-        em.persist(student);
-        em.persist(course);
-    }
+    em.persist(student);
+    em.persist(course);
+  }
 
 }

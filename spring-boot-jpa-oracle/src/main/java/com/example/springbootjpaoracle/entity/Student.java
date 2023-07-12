@@ -1,5 +1,6 @@
 package com.example.springbootjpaoracle.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,59 +16,60 @@ import java.util.List;
 @Entity
 public class Student {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+  @Id
+  @GeneratedValue
+  private Long id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    private Passport passport;
+  @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  @JoinColumn(name = "passport_id")
+  private Passport passport;
 
-    @ManyToMany
-    @JoinTable(name = "STUDENT_COURSE",
-            joinColumns = @JoinColumn(name = "STUDENT_ID"),
-            inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
-    private List<Course> courses = new ArrayList<>();
+  @ManyToMany
+  @JoinTable(name = "STUDENT_COURSE",
+      joinColumns = @JoinColumn(name = "STUDENT_ID"),
+      inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
+  private List<Course> courses = new ArrayList<>();
 
-    protected Student() {
-    }
+  protected Student() {
+  }
 
-    public Student(String name) {
-        this.name = name;
-    }
+  public Student(String name) {
+    this.name = name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public Passport getPassport() {
-        return passport;
-    }
+  public Passport getPassport() {
+    return passport;
+  }
 
-    public void setPassport(Passport passport) {
-        this.passport = passport;
-    }
+  public void setPassport(Passport passport) {
+    this.passport = passport;
+  }
 
-    public List<Course> getCourses() {
-        return courses;
-    }
+  public List<Course> getCourses() {
+    return courses;
+  }
 
-    public void addCourse(Course course) {
-        this.courses.add(course);
-    }
+  public void addCourse(Course course) {
+    this.courses.add(course);
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    @Override
-    public String toString() {
-        return String.format("Student[%s]", name);
-    }
+  @Override
+  public String toString() {
+    return String.format("Student[%s]", name);
+  }
 }
