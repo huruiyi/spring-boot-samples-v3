@@ -34,7 +34,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for {@link SampleSessionJdbcApplication22000}.
+ * Tests for {@link SessionJdbcApplication22000}.
  *
  * @author Andy Wilkinson
  * @author Vedran Pavic

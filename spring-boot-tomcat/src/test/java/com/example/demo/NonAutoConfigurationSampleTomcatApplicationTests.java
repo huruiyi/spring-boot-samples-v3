@@ -54,7 +54,7 @@ class NonAutoConfigurationSampleTomcatApplicationTests {
 	public static class NonAutoConfigurationSampleTomcatApplication {
 
 		public static void main(String[] args) {
-			SpringApplication.run(SpringBootTomcatApplication.class, args);
+			SpringApplication.run(TomcatApplication.class, args);
 		}
 
 	}

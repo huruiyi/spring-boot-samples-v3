@@ -4,13 +4,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootOpenapiApplication {
+public class TomcatJspApplication {
 
 	/**
-	 * <a href="http://localhost:8080/swagger-ui/index.html">...</a>
+	 * 需运行于tomcat下，或者独立打开spring-boot-tomcat-jsp项目，直接运行
+	 * @param args
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootOpenapiApplication.class, args);
+		SpringApplication.run(TomcatJspApplication.class, args);
 	}
 
 }

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootBasicApplication {
+public class SessionRedisApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootBasicApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(SessionRedisApplication.class, args);
+	}
 
 }
