@@ -35,3 +35,8 @@ insert into student_course(student_id, course_id) values (20001, 10001);
 insert into student_course(student_id, course_id) values (20002, 10001);
 insert into student_course(student_id, course_id) values (20003, 10001);
 insert into student_course(student_id, course_id) values (20001, 10003);
+
+create or replace procedure plus1inout(arg IN int, res OUT int) as
+BEGIN
+  res := arg + 1;
+END;

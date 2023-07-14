@@ -1,6 +1,7 @@
 package com.example.springbootjpaoracle;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -12,6 +13,9 @@ import com.example.springbootjpaoracle.repository.CourseRepository;
 import com.example.springbootjpaoracle.repository.PassportRepository;
 import com.example.springbootjpaoracle.repository.ReviewRepository;
 import com.example.springbootjpaoracle.repository.StudentV2Repository;
+import com.example.springbootjpaoracle.repository.UserStoredProcedureRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.ParameterMode;
 import jakarta.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +32,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.transaction.annotation.Transactional;
 
-@SpringBootTest(classes = DemoApplication.class)
+@SpringBootTest(classes = JpaOracleApplication.class)
 public class RepositoryTest {
 
   private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -44,6 +48,13 @@ public class RepositoryTest {
 
   @Autowired
   PassportRepository passportRepository;
+
+  @Autowired
+  UserStoredProcedureRepository userStoredProcedureRepository;
+
+
+  @Autowired
+  EntityManager em;
 
   @Test
   void findAll() {
@@ -152,5 +163,33 @@ public class RepositoryTest {
     // check the value
     Course course1 = repository.findById(10001L);
     assertEquals("JPA in 50 Steps - Updated", course1.getName());
+  }
+
+  @Test
+  public void test_Procedure(){
+    assertThat(userStoredProcedureRepository.plus1BackedByOtherNamedStoredProcedure(1)).isEqualTo(2);
+    assertThat(userStoredProcedureRepository.plus1inout(1)).isEqualTo(2);
+  }
+
+  @Test
+  void plainJpa21() {
+    var proc = em.createStoredProcedureQuery("plus1inout");
+    proc.registerStoredProcedureParameter(1, Integer.class, ParameterMode.IN);
+    proc.registerStoredProcedureParameter(2, Integer.class, ParameterMode.OUT);
+
+    proc.setParameter(1, 1);
+    proc.execute();
+
+    assertThat(proc.getOutputParameterValue(2)).isEqualTo(2);
+  }
+
+  @Test
+  void plainJpa21_entityAnnotatedCustomNamedProcedurePlus1IO() {
+    var proc = em.createNamedStoredProcedureQuery("User.plus1");
+
+    proc.setParameter("arg", 1);
+    proc.execute();
+
+    assertThat(proc.getOutputParameterValue("res")).isEqualTo(2);
   }
 }
