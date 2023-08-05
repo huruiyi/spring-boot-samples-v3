@@ -15,15 +15,13 @@ package com.example.demo.web;/*
  */
 
 
-import java.util.Date;
-import java.util.Map;
-
 import com.example.demo.model.DemoException;
 import com.example.demo.model.DemoRestResponse;
+import java.util.Date;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

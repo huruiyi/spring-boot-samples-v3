@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.example.demo.service.HelloWorldService;
 import com.example.demo.web.SampleController;
 import org.junit.jupiter.api.Test;
@@ -18,9 +20,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Basic integration tests for demo application.

@@ -1,10 +1,9 @@
 package com.example.demo.demoA;
 
+import java.lang.reflect.Method;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
-
-import java.lang.reflect.Method;
 
 public class CglibProxy implements MethodInterceptor {
     private CustomerDao customerDao;

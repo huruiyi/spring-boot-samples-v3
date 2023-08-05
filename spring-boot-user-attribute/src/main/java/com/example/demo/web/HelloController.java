@@ -14,11 +14,10 @@ public class HelloController {
 
   @GetMapping("/test")
   public String test() {
-    ServletRequestAttributes servletRequestAttributes =
-        (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+    ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
     HttpServletRequest request = servletRequestAttributes.getRequest();
 
-    UserInfo userInfo = (UserInfo)request.getAttribute("user");
+    UserInfo userInfo = (UserInfo) request.getAttribute("user");
     log.info(userInfo.toString());
     return "test success";
   }

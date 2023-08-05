@@ -2,7 +2,7 @@ package com.example.demo;
 
 import com.alibaba.fastjson2.JSON;
 import com.example.demo.model.User;
-import com.example.demo.utils.JjwtUtil;
+import com.example.demo.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.SignatureAlgorithm;
@@ -32,11 +32,11 @@ public class TestJjwt {
     String subject = JSON.toJSONString(user);
     try {
       // "Jack"是jwt签发者，"李四"是jwt接收者
-      String jwt = JjwtUtil.createJWT("Jack", "李四", subject);
+      String jwt = JwtUtils.createJWT("Jack", "李四", subject);
       System.out.println("JWT：" + jwt);
       System.out.println("JWT长度：" + jwt.length());
       System.out.println("\njwt三个组成部分中间payload部分的解密：");
-      Claims c = JjwtUtil.parseJWT(jwt);
+      Claims c = JwtUtils.parseJWT(jwt);
       System.out.println("jti用户id：" + c.getId());
       System.out.println("iat登录时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(c.getIssuedAt()));
       System.out.println("iss签发者：" + c.getIssuer());

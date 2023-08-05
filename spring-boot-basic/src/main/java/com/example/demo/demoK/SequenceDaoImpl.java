@@ -1,10 +1,9 @@
 package com.example.demo.demoK;
 
-import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.stereotype.Component;
 
 @Component("sequenceDao")
 public class SequenceDaoImpl implements SequenceDao {

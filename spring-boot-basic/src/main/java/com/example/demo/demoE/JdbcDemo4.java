@@ -2,12 +2,11 @@ package com.example.demo.demoE;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import jakarta.annotation.Resource;
+import java.beans.PropertyVetoException;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
-
-import java.beans.PropertyVetoException;
 
 @SpringBootTest
 @ContextConfiguration("classpath:applicationContextE.xml")

@@ -1,8 +1,7 @@
 package com.example.demo.demoN;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class SequenceGenerator {
     @Autowired

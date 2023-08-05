@@ -17,9 +17,6 @@ public class GlobalRequestAdvice {
     Iterator<String> names = request.getHeaderNames().asIterator();
     while (names.hasNext()) {
       String name = names.next();
-
-
-
       log.info(request.getHeader(name));
     }
     // 此处实际应该根据header的token解析出用户

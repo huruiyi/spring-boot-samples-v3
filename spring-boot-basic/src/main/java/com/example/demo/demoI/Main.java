@@ -1,9 +1,8 @@
 package com.example.demo.demoI;
 
+import java.util.List;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
-
-import java.util.List;
 
 public class Main {
 
