@@ -24,6 +24,7 @@
         <module>spring-boot-session-jdbc</module>
         <module>spring-boot-session-redis</module>
         <module>spring-boot-session-mongo</module>
+        <module>spring-boot-shell</module>
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-tomcat</module>
         <module>spring-boot-tomcat-jsp</module>
