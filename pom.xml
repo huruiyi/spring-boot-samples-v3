@@ -27,5 +27,9 @@
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-tomcat</module>
         <module>spring-boot-tomcat-jsp</module>
+        <module>spring-boot-user-attribute</module>
+        <module>spring-boot-user-jwt</module>
+        <module>spring-boot-user-jwt-v2</module>
+        <module>spring-boot-user-tl</module>
     </modules>
 </project>
