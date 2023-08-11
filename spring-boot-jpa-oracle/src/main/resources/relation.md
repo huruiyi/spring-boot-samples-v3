@@ -1,6 +1,8 @@
 ```java
+
 @Entity
 public class Student {
+
   @Id
   @GeneratedValue
   private Long id;
@@ -16,20 +18,26 @@ public class Student {
   private List<Course> courses = new ArrayList<>();
 }
 ```
+
 ```java
+
 @Entity
 public class Passport {
+
   @Id
   @GeneratedValue
   private Long id;
 
-  @OneToOne(fetch = FetchType.LAZY,mappedBy = "passport")
+  @OneToOne(fetch = FetchType.LAZY, mappedBy = "passport")
   private Student student;
 }
 ```
+
 ```java
+
 @Entity
 public class Course {
+
   @Id
   @GeneratedValue
   private Long id;
@@ -41,9 +49,12 @@ public class Course {
   private List<Student> students = new ArrayList<>();
 }
 ```
+
 ```java
+
 @Entity
 public class Review {
+
   @Id
   @GeneratedValue
   private Long id;

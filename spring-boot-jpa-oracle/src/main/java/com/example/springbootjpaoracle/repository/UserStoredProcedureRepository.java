@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface UserStoredProcedureRepository  extends CrudRepository<UserStoredProcedure, Long> {
+public interface UserStoredProcedureRepository extends CrudRepository<UserStoredProcedure, Long> {
 
   @Procedure(name = "User.plus1")
   Integer plus1BackedByOtherNamedStoredProcedure(Integer arg);

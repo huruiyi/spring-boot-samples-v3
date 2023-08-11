@@ -17,7 +17,7 @@ import jakarta.persistence.StoredProcedureParameter;
 public class UserStoredProcedure {
 
   @Id
-  @GeneratedValue //
+  @GeneratedValue
   private Long id;
 
 }

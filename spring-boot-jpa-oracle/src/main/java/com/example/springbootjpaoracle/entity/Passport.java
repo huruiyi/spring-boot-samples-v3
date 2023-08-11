@@ -6,7 +6,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class Passport {
 
@@ -17,7 +19,7 @@ public class Passport {
   @Column(nullable = false)
   private String no;
 
-  @OneToOne(fetch = FetchType.LAZY,mappedBy = "passport")
+  @OneToOne(fetch = FetchType.LAZY, mappedBy = "passport")
   private Student student;
 
   protected Passport() {
@@ -27,24 +29,12 @@ public class Passport {
     this.no = no;
   }
 
-  public String getNo() {
-    return no;
-  }
-
   public void setNo(String no) {
     this.no = no;
   }
 
-  public Student getStudent() {
-    return student;
-  }
-
   public void setStudent(Student student) {
     this.student = student;
-  }
-
-  public Long getId() {
-    return id;
   }
 
   @Override

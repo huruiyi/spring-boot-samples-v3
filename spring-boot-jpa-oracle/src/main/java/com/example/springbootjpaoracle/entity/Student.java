@@ -12,7 +12,11 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class Student {
 
@@ -22,6 +26,18 @@ public class Student {
 
   @Column(nullable = false)
   private String name;
+
+  public Student() {
+
+  }
+
+  public Student(String name) {
+    this.name = name;
+  }
+
+  public void addCourse(Course course) {
+    this.courses.add(course);
+  }
 
   @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "passport_id")
@@ -33,40 +49,7 @@ public class Student {
       inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
   private List<Course> courses = new ArrayList<>();
 
-  protected Student() {
-  }
 
-  public Student(String name) {
-    this.name = name;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Passport getPassport() {
-    return passport;
-  }
-
-  public void setPassport(Passport passport) {
-    this.passport = passport;
-  }
-
-  public List<Course> getCourses() {
-    return courses;
-  }
-
-  public void addCourse(Course course) {
-    this.courses.add(course);
-  }
-
-  public Long getId() {
-    return id;
-  }
 
   @Override
   public String toString() {

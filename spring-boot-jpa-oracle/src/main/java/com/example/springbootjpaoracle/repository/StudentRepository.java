@@ -4,17 +4,17 @@ import com.example.springbootjpaoracle.entity.Course;
 import com.example.springbootjpaoracle.entity.Passport;
 import com.example.springbootjpaoracle.entity.Student;
 import jakarta.persistence.EntityManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
+@Slf4j
 @Repository
 @Transactional
 public class StudentRepository {
 
-  private Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Autowired
   EntityManager em;
@@ -24,13 +24,11 @@ public class StudentRepository {
   }
 
   public Student save(Student student) {
-
     if (student.getId() == null) {
       em.persist(student);
     } else {
       em.merge(student);
     }
-
     return student;
   }
 
@@ -79,8 +77,7 @@ public class StudentRepository {
   }
 
   public void insertStudentAndCourse(Student student, Course course) {
-    //-Student student = new Student("Jack");
-    //-Course course = new Course("Microservices in 100 Steps");
+    log.info(student.toString());
     student.addCourse(course);
     course.addStudent(student);
 
