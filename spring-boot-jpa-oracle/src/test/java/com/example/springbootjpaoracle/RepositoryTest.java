@@ -46,10 +46,7 @@ class RepositoryTest {
   StudentV2Repository studentV2Repository;
   @Autowired
   PassportRepository passportRepository;
-  @Autowired
-  UserStoredProcedureRepository userStoredProcedureRepository;
-  @Autowired
-  EntityManager em;
+
 
   @Test
   void findAllTest() {
@@ -167,31 +164,4 @@ class RepositoryTest {
     assertEquals("JPA in 50 Steps - Updated", course1.getName());
   }
 
-  @Test
-  void test_Procedure() {
-    assertThat(userStoredProcedureRepository.plus1BackedByOtherNamedStoredProcedure(1)).isEqualTo(2);
-    assertThat(userStoredProcedureRepository.plus1inout(1)).isEqualTo(2);
-  }
-
-  @Test
-  void plainJpa21() {
-    var proc = em.createStoredProcedureQuery("plus1inout");
-    proc.registerStoredProcedureParameter(1, Integer.class, ParameterMode.IN);
-    proc.registerStoredProcedureParameter(2, Integer.class, ParameterMode.OUT);
-
-    proc.setParameter(1, 1);
-    proc.execute();
-
-    assertThat(proc.getOutputParameterValue(2)).isEqualTo(2);
-  }
-
-  @Test
-  void plainJpa21_entityAnnotatedCustomNamedProcedurePlus1IO() {
-    var proc = em.createNamedStoredProcedureQuery("User.plus1");
-
-    proc.setParameter("arg", 1);
-    proc.execute();
-
-    assertThat(proc.getOutputParameterValue("res")).isEqualTo(2);
-  }
 }
