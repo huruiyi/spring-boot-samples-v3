@@ -6,17 +6,19 @@ import com.example.annotation.LoginToken;
 import com.example.model.User;
 import com.example.service.TokenService;
 import com.example.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
 
-  @Autowired
-  private UserService userService;
-  @Autowired
-  private TokenService tokenService;
+  private final UserService userService;
+  private final TokenService tokenService;
+
+  public LoginController(UserService userService, TokenService tokenService) {
+    this.userService = userService;
+    this.tokenService = tokenService;
+  }
 
   /**
    * localhost:8080/login?username=admin&password=admin
@@ -27,13 +29,12 @@ public class LoginController {
     User user = userService.getUser(username, password);
     if (user == null) {
       jsonObject.put("message", "登录失败！");
-      return jsonObject;
     } else {
       String token = tokenService.getToken(user);
       jsonObject.put("token", token);
       jsonObject.put("user", user);
-      return jsonObject;
     }
+    return jsonObject;
   }
 
   /**

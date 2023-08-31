@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.example.demo.demoM");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.example.demoM");
 
         SequenceService sequenceService = context.getBean(SequenceService.class);
 

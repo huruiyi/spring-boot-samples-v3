@@ -9,7 +9,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.example.advice.BusinessException;
 import com.example.annotation.LoginToken;
 import com.example.annotation.PassToken;
-import com.example.model.TSBaseUser;
+import com.example.entities.TSBaseUser;
 import com.example.service.BaseUserInfo;
 import com.example.service.IBaseUserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,7 +41,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         return true;
       }
     }
-//        检查有没有需要用户权限的注解
+    // 检查有没有需要用户权限的注解
     if (method.isAnnotationPresent(LoginToken.class)) {
       LoginToken loginToken = method.getAnnotation(LoginToken.class);
       if (loginToken.required()) {

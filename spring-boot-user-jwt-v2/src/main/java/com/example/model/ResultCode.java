@@ -14,8 +14,8 @@ public enum ResultCode {
     this.message = message;
   }
 
-  private Integer code;
-  private String message;
+  private final Integer code;
+  private final String message;
 
   public Integer code() {
     return this.code;

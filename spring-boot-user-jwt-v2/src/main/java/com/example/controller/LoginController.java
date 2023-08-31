@@ -5,7 +5,7 @@ import com.example.annotation.LoginToken;
 import com.example.annotation.PassToken;
 import com.example.model.R;
 import com.example.model.ResultCode;
-import com.example.model.TSBaseUser;
+import com.example.entities.TSBaseUser;
 import com.example.service.IBaseUserService;
 import com.example.service.TokenService;
 import com.example.vo.TSBaseUserVo;

@@ -8,5 +8,5 @@
 
     <!-- Spring的IOC注解入门 -->
     <!-- 使用IOC的注解开发,配置组件扫描(哪些包下的类使用IOC注解) -->
-    <context:component-scan base-package="com.example.demo.demo7"/>
+    <context:component-scan base-package="com.example.demo7"/>
 </beans>

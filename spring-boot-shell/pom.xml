@@ -9,11 +9,9 @@
     <version>0.0.1</version>
   </parent>
 
+  <name>spring-boot-shell</name>
   <artifactId>spring-boot-shell</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
-  <name>spring-boot-shell</name>
-  <description>spring-boot-shell</description>
 
   <properties>
     <java.version>17</java.version>

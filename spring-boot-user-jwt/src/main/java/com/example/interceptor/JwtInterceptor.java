@@ -53,7 +53,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         try {
           userId = JWT.decode(token).getAudience().get(0);
         } catch (JWTDecodeException j) {
-          throw new RuntimeException("401");
+          throw new RuntimeException("token验证失败");
         }
         User user = userService.getUser(userId);
         if (user == null) {
@@ -75,12 +75,12 @@ public class JwtInterceptor implements HandlerInterceptor {
   @Override
   public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView)
       throws Exception {
-
+    // TODO document why this method is empty
   }
 
   @Override
   public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e)
       throws Exception {
-
+    // TODO document why this method is empty
   }
 }

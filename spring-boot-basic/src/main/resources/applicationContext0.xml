@@ -9,7 +9,7 @@
     <bean id="one" class="com.example.demo0.One">
         <constructor-arg name="one" value="one"/>
     </bean>
-    <context:component-scan base-package="com.example.demo.demo0"/>
+    <context:component-scan base-package="com.example.demo0"/>
     <bean id="two" class="com.example.demo0.Two">
         <constructor-arg name="two" value="two"/>
     </bean>

@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.entities;
 
 
 import com.baomidou.mybatisplus.annotation.TableName;

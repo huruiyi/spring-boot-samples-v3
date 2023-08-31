@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.mapper.BaseUserMapper;
-import com.example.model.TSBaseUser;
+import com.example.entities.TSBaseUser;
 import com.example.service.IBaseUserService;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +15,11 @@ public class BaseUserServiceImpl extends ServiceImpl<BaseUserMapper, TSBaseUser>
   public TSBaseUser login(TSBaseUser loginUser) {
 
     LambdaQueryWrapper<TSBaseUser> wrapper = new LambdaQueryWrapper<>();
-    wrapper.eq(TSBaseUser::getUserName , loginUser.getUserName())
-        .eq(TSBaseUser::getPassword , loginUser.getPassword());
+    wrapper.eq(TSBaseUser::getUserName, loginUser.getUserName()).eq(TSBaseUser::getPassword, loginUser.getPassword());
 
     TSBaseUser baseUser = baseMapper.selectOne(wrapper);
 
-    if (ObjectUtils.isNotEmpty(baseUser)){
+    if (ObjectUtils.isNotEmpty(baseUser)) {
       return baseUser;
     }
 

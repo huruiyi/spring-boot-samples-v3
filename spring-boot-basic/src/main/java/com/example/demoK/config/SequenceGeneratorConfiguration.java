@@ -9,7 +9,7 @@ import org.springframework.context.annotation.FilterType;
         includeFilters = {
                 @ComponentScan.Filter(
                         type = FilterType.REGEX,
-                        pattern = {"com.example.demo.demoK.*Dao", "com.example.demo.demoK.*Impl"})
+                        pattern = {"com.example.demoK.*Dao", "com.example.demoK.*Impl"})
         },
         excludeFilters = {
                 @ComponentScan.Filter(
