@@ -5,6 +5,6 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Spring的sBean的生命周期的配置=========== -->
-    <bean id="customerDAO" class="com.example.demo.demo2.CustomerDAOImpl" scope="prototype" init-method="setup"
+    <bean id="customerDAO" class="com.example.demo2.CustomerDAOImpl" scope="prototype" init-method="setup"
           destroy-method="destroy"/>
 </beans>

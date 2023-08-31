@@ -6,7 +6,7 @@
 
     <!-- Spring的集合属性的注入============================ -->
     <!-- 注入数组类型 -->
-    <bean id="collectionBean" class="com.example.demo.demo5.CollectionBean">
+    <bean id="collectionBean" class="com.example.demo5.CollectionBean">
         <!-- 数组类型 -->
         <property name="arrs">
             <list>

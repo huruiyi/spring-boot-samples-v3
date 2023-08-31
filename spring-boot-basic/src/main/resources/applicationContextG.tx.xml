@@ -7,13 +7,13 @@
 		http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Service配置 -->
-	<bean id="accountService" class="com.example.demo.tx.demoG.AccountServiceImpl">
+	<bean id="accountService" class="com.example.tx.demoG.AccountServiceImpl">
 		<property name="accountDao" ref="accountDao" />
 		<property name="transactionTemplate" ref="transactionTemplate" />
 	</bean>
 
 	<!-- Dao配置 -->
-	<bean id="accountDao" class="com.example.demo.tx.demoG.AccountDaoImpl">
+	<bean id="accountDao" class="com.example.tx.demoG.AccountDaoImpl">
 		<!-- 直接指定数据源,SPRING自动创建JdbcTemplate, 无需自己配置 jdbcTemplate_c3p0 -->
 		<property name="dataSource" ref="c3poDataSource" />
 	</bean>

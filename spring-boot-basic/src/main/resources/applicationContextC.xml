@@ -12,8 +12,8 @@
     <aop:aspectj-autoproxy/>
 
     <!-- 配置目标类 -->
-    <bean id="orderDao" class="com.example.demo.demoC.OrderDao"></bean>
+    <bean id="orderDao" class="com.example.demoC.OrderDao"></bean>
 
     <!-- 配置切面类 -->
-    <bean id="myAspect" class="com.example.demo.demoC.MyAspectAnno"></bean>
+    <bean id="myAspect" class="com.example.demoC.MyAspectAnno"></bean>
 </beans>

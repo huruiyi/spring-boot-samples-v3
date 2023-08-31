@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+  <title>Login</title>
+  <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+  <link href="/css/user.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui header " style="color: aliceblue">Fairy-Vip-Test-System</h2>
+    <form method="POST" th:action="@{/login}" class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="un"  th:value="user" placeholder="用户名">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="pwd" th:value="password" placeholder="密码">
+          </div>
+        </div>
+        <button class="ui fluid basic large submit pink button">Login</button>
+      </div>
+      <div th:if="${param.error != null}" class="ui error message" style="display: block;">
+        Authentication Failed ：
+        <p th:if="${param.error}" th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message} " class="bg-danger"></p>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

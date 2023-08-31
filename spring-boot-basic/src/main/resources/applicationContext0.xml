@@ -6,11 +6,11 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-    <bean id="one" class="com.example.demo.demo0.One">
+    <bean id="one" class="com.example.demo0.One">
         <constructor-arg name="one" value="one"/>
     </bean>
     <context:component-scan base-package="com.example.demo.demo0"/>
-    <bean id="two" class="com.example.demo.demo0.Two">
+    <bean id="two" class="com.example.demo0.Two">
         <constructor-arg name="two" value="two"/>
     </bean>
 

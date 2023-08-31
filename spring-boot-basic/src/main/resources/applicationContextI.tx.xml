@@ -9,12 +9,12 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Service配置 -->
-	<bean id="accountService" class="com.example.demo.tx.demoI.AccountServiceImpl">
+	<bean id="accountService" class="com.example.tx.demoI.AccountServiceImpl">
 		<property name="accountDao" ref="accountDao" />
 	</bean>
 
 	<!-- Dao配置 -->
-	<bean id="accountDao" class="com.example.demo.tx.demoI.AccountDaoImpl">
+	<bean id="accountDao" class="com.example.tx.demoI.AccountDaoImpl">
 		<!-- 直接指定数据源,SPRING自动创建JdbcTemplate, 无需自己配置 jdbcTemplate_c3p0 -->
 		<property name="dataSource" ref="c3poDataSource" />
 	</bean>
