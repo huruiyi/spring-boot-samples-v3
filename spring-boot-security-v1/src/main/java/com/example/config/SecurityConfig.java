@@ -15,7 +15,15 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
- * FilterChainProxy
+ * WebSecurityConfigurerAdapter
+ * <p>
+ * #org.springframework.security.web.FilterChainProxy
+ * <p>
+ * #org.springframework.security.web.session.SessionManagementFilter
+ * <p>
+ * #org.springframework.security.web.access.ExceptionTranslationFilter
+ * <p>
+ * #org.springframework.security.web.access.intercept.FilterSecurityInterceptor
  */
 @Configuration
 @EnableWebSecurity
@@ -24,11 +32,10 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((auth) -> {
-          auth.requestMatchers(HttpMethod.POST, "/register").permitAll();
-          auth.requestMatchers("/**").hasAnyRole("USER");
-          auth.anyRequest().authenticated();
-        }
-    );
+      auth.requestMatchers(HttpMethod.POST, "/register").permitAll();
+      auth.requestMatchers("/**").hasAnyRole("USER");
+      auth.anyRequest().authenticated();
+    });
 
     http.logout(logoutConfigurer -> {
       logoutConfigurer.deleteCookies("remove");
