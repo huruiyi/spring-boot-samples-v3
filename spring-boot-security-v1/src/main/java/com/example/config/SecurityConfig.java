@@ -24,6 +24,8 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  * #org.springframework.security.web.access.ExceptionTranslationFilter
  * <p>
  * #org.springframework.security.web.access.intercept.FilterSecurityInterceptor
+ * <p>
+ * org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
  */
 @Configuration
 @EnableWebSecurity
