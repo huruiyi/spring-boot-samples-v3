@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+  <link href="/css/user.css" rel="stylesheet">
+</head>
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui header " style="color: aliceblue">Welcome to Fairy-Vip-Test-System</h2>
+    <a id="logoutLink" class="ui fluid basic large submit pink button" th:href="@{/user/logout}">Logout</a>
+  </div>
+</div>
+</body>
+</html>
