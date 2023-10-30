@@ -27,6 +27,9 @@ public class LoginController {
   private TokenService tokenService;
 
 
+  /**
+   * http://localhost:8080/login?userName=admin&&password=123456&&id=1
+   */
   @PassToken
   @RequestMapping(value = "/login" , method = {RequestMethod.GET,RequestMethod.POST})
   public R<?> login(TSBaseUserVo userVo){

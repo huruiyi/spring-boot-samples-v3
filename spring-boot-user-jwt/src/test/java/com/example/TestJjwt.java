@@ -10,6 +10,7 @@ import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import javax.crypto.spec.SecretKeySpec;
@@ -25,7 +26,7 @@ public class TestJjwt {
     return key;
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     User user = new User();
     user.setUserID("10");
     user.setUserName("张三");
@@ -33,7 +34,7 @@ public class TestJjwt {
     // jwt所面向的用户，放登录的用户名等
     String subject = JSON.toJSONString(user);
     // "Jack"是jwt签发者，"李四"是jwt接收者
-    String jwt = JwtUtils.createJWT("Jack", "李四", subject);
+    String jwt = JwtUtils.createJWT("Jack", Arrays.asList("张三", "张小三"), subject);
     System.out.println("JWT：" + jwt);
     System.out.println("JWT长度：" + jwt.length());
     System.out.println("\njwt三个组成部分中间payload部分的解密：");

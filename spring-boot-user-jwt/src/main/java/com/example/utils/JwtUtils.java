@@ -1,11 +1,10 @@
 package com.example.utils;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import javax.crypto.SecretKey;
@@ -30,7 +29,7 @@ public class JwtUtils {
     return new SecretKeySpec(Base64.decodeBase64(JWT_SECRET), "HmacSHA256");
   }
 
-  public static String createJWT(String issuer, String audience, String subject) {
+  public static String createJWT(String issuer, List<String> audiences, String subject) {
     Map<String, Object> mapClaims = new HashMap<>();
     mapClaims.put("username", "admin");
     mapClaims.put("password", "010203");
@@ -43,16 +42,16 @@ public class JwtUtils {
         .claims().add(mapClaims)
         .expiration(new Date(exp))
         .id(JWT_ID)
+        .audience().add(audiences).and()
         .issuedAt(issuedAt)
         .issuer(issuer)
-        .audience(audience)
         .subject(subject).build();
     return Jwts.builder().claims(claims).signWith(generalKey()).compact();
   }
 
   // 解密jwt
   public static Claims parseJWT(String jwt) {
-     return Jwts.parser().verifyWith(generalKey()).build().parseClaimsJws(jwt).getPayload();
+    return Jwts.parser().verifyWith(generalKey()).build().parseSignedClaims(jwt).getPayload();
   }
 
 }
