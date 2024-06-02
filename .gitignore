@@ -78,3 +78,4 @@ target
 *.iml
 *.iml
 /spring-boot/logs
+.DS_Store
