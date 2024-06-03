@@ -13,6 +13,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
 public class SecurityApplication {
 
+  /**
+   * <a href="http://localhost:8080/swagger-ui/index.html">首页</a>
+   */
   public static void main(String[] args) {
     SpringApplication.run(SecurityApplication.class, args);
   }
