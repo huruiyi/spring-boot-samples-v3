@@ -22,6 +22,7 @@
     <module>spring-boot-jpa-oracle</module>
     <module>spring-boot-openapi</module>
     <module>spring-boot-security-jwt</module>
+    <module>spring-boot-security-jwt-v2</module>
     <module>spring-boot-security-v1</module>
     <module>spring-boot-security-v2</module>
     <module>spring-boot-session-jdbc</module>
