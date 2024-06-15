@@ -1,0 +1,27 @@
+{
+  "realm" : "howtodoinjava-realm",
+  "users" : [ {
+    "id" : "000b6471-2f34-42f2-9578-65690e3e4180",
+    "username" : "test-user",
+    "firstName" : "ruiyi",
+    "lastName" : "hu",
+    "email" : "38761770@qq.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1718461932952,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "3342478e-f1fb-4b87-b774-83a5073e6b35",
+      "type" : "password",
+      "userLabel" : "我的密码",
+      "createdDate" : 1718461965841,
+      "secretData" : "{\"value\":\"mOoRqNbhjAV9+U6CSHyLFek+xhnT7lt/pA8czABQ3+0=\",\"salt\":\"eyurcFFuzxhoxFxvE23RAg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-howtodoinjava-realm" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

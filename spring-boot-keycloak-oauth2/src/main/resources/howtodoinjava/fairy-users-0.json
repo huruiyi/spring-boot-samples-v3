@@ -1,0 +1,30 @@
+{
+  "realm" : "fairy",
+  "users" : [ {
+    "id" : "2d58b763-f009-4f19-b9d5-942185d884a0",
+    "username" : "38761770@qq.com",
+    "firstName" : "睿毅",
+    "lastName" : "胡",
+    "email" : "38761770@qq.com",
+    "emailVerified" : true,
+    "attributes" : {
+      "locale" : [ "zh-CN" ]
+    },
+    "createdTimestamp" : 1718417686141,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "bf6d9f85-424b-42f9-b471-dd7aa1977767",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1718417695005,
+      "secretData" : "{\"value\":\"UzZUTQg+hWwgnXyzNMTkOnlHtj/sNvwa0hkq/othTe0=\",\"salt\":\"cVYYJYQcv8H/fHlXGO3JTg==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-fairy" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
