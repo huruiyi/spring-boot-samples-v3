@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmployeeRestApiApplication implements CommandLineRunner {
+public class KeycloakOAuth2ApiApplication implements CommandLineRunner {
 
   @Autowired
   EmployeeRepository employeeRepository;
@@ -17,7 +17,7 @@ public class EmployeeRestApiApplication implements CommandLineRunner {
    * https://github.com/lokeshgupta1981/Spring-Boot-Security-OAuth2.git
    */
   public static void main(String[] args) {
-    SpringApplication.run(EmployeeRestApiApplication.class, args);
+    SpringApplication.run(KeycloakOAuth2ApiApplication.class, args);
   }
 
   @Override
