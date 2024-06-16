@@ -41,7 +41,7 @@ public class SecurityConfig {
   private ClientRegistration keycloakClientRegistration() {
     return ClientRegistration.withRegistrationId("howtodoinjava-realm")
         .clientId("employee-management-api")
-        .clientSecret("FsF1rAbtE8TuBjwH4fVaa79FXKluNA9a")
+        .clientSecret("cbixGai1r0SHthgke2pLmjgvv6rif5f5")
         .redirectUri("http://localhost:9090/login/oauth2/code/employee-management-api")
         .issuerUri("http://localhost:8080/realms/howtodoinjava")
         .authorizationUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/auth")
