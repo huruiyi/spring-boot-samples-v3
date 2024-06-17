@@ -9,8 +9,8 @@
     <version>0.0.1</version>
   </parent>
 
-  <name>spring-boot-security-v1</name>
-  <artifactId>spring-boot-security-v1</artifactId>
+  <name>spring-boot-security-memory</name>
+  <artifactId>spring-boot-security-memory</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>

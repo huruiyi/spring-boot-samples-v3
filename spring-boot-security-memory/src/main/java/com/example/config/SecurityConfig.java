@@ -33,7 +33,7 @@ public class SecurityConfig {
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http.authorizeHttpRequests((auth) -> {
+    http.authorizeHttpRequests(auth -> {
       auth.requestMatchers(HttpMethod.POST, "/register").permitAll();
       auth.requestMatchers("/**").hasAnyRole("USER");
       auth.anyRequest().authenticated();
@@ -55,9 +55,7 @@ public class SecurityConfig {
       formLoginSpec.passwordParameter("pwd");
     });
 
-    http.csrf(httpSecurityCsrfConfigurer -> {
-      httpSecurityCsrfConfigurer.csrfTokenRepository(new CookieCsrfTokenRepository());
-    });
+    http.csrf(configurer -> configurer.csrfTokenRepository(new CookieCsrfTokenRepository()));
 
     http.httpBasic(Customizer.withDefaults());
     return http.build();
