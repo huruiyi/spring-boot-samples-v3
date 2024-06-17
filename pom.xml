@@ -24,6 +24,7 @@
     <module>spring-boot-jpa-oracle</module>
     <module>spring-boot-keycloak-oauth2</module>
     <module>spring-boot-openapi</module>
+    <module>spring-boot-security-h2</module>
     <module>spring-boot-security-jwt</module>
     <module>spring-boot-security-jwt-v2</module>
     <module>spring-boot-security-memory</module>
