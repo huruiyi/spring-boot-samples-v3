@@ -1,0 +1,81 @@
+{
+  "realm" : "mes",
+  "users" : [ {
+    "id" : "c7c58835-6d14-4dce-a694-7180fdeeb9e0",
+    "username" : "admin",
+    "firstName" : "ruiyi",
+    "lastName" : "hu",
+    "email" : "38761770@qq.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1718626878752,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "632ce28c-62da-4ef5-89e2-4f201d70926a",
+      "type" : "password",
+      "userLabel" : "我的密码",
+      "createdDate" : 1718627454207,
+      "secretData" : "{\"value\":\"pRQ2dnM4SCX19MqsGq8R3WnaQmA9oKyS/zxR2MJjrdvCI+pLlAFrgejh4Gv9fh9pA/9/zJtPQwYUgXcnCO+brw==\",\"salt\":\"i2h8bp+FvSBbE5CXKFy/0A==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-mes", "ADMIN" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "0cb8f89a-bf25-457c-b7bc-201cfeb8e54e",
+    "username" : "reguser",
+    "firstName" : "ruiyi",
+    "lastName" : "hu",
+    "email" : "reguser@qq.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1718626960815,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "be3cb0b7-8d71-49b5-9e24-24abdcb395f1",
+      "type" : "password",
+      "userLabel" : "我的密码",
+      "createdDate" : 1718627017222,
+      "secretData" : "{\"value\":\"fpoLwqcYD2G8uvLK64YWFnPu7pKAIJd5hKCNr8XGDgPBvLjJ38qbGslPR9cpC6JXMf2SCkPlLa014x/rl5Yt8g==\",\"salt\":\"0Y5+lRpqTIC0x0uzXDAzXQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-mes", "REGULAR" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "c80da0c0-d05e-4a47-a54e-235a3b657a44",
+    "username" : "service-account-admin-cli",
+    "emailVerified" : false,
+    "createdTimestamp" : 1718629474234,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "admin-cli",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-mes" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "69533e8d-6de1-486f-ad4a-2366a5e39462",
+    "username" : "service-account-employee-api",
+    "emailVerified" : false,
+    "createdTimestamp" : 1718626828002,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "employee-api",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-mes" ],
+    "clientRoles" : {
+      "employee-api" : [ "uma_protection" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

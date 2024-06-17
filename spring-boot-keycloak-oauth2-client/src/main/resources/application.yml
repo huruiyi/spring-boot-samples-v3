@@ -1,0 +1,43 @@
+server:
+  port: 9091
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: employee-api
+            client-secret: 4lwoiLbHLeBOfGR4ys3m7GU0w9rmvtxG
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8080/realms/mes/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/mes/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/mes/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/mes/protocol/openid-connect/certs
+            issuer-uri: http://localhost:8080/realms/mes
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/mes/protocol/openid-connect/certs
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.boot.autoconfigure.security: DEBUG
+    org.springframework.boot.autoconfigure.security.oauth2: DEBUG
+
+keycloak-admin:
+  server-url: http://localhost:8080
+  realm: mes
+  admin-client-id: admin-cli
+  admin-client-secret: EFNYOXpzG7AFPhHDxMiV1nYvEO1Seqol
+  client-id: employee-api
+  client-secret: 4lwoiLbHLeBOfGR4ys3m7GU0w9rmvtxG
+
+
+#.\kc.bat  export --dir mes-realm --realm mes
