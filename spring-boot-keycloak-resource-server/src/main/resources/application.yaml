@@ -1,0 +1,15 @@
+server:
+  port: 9090
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/demo-realm
+
+#export
+#.\kc.bat export --dir demo-realm --realm demo-realm
+#
+#import
+#.\kc.bat import --dir demo-realm
