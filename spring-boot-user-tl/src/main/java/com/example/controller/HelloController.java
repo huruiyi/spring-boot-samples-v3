@@ -16,4 +16,5 @@ public class HelloController {
     log.info(currentUser.toString());
     return "test success";
   }
+
 }

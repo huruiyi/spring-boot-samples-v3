@@ -19,4 +19,5 @@ public class InterceptorConfig implements WebMvcConfigurer {
   public JwtInterceptor jwtInterceptor() {
     return new JwtInterceptor();
   }
+
 }

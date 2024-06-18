@@ -5,10 +5,10 @@ import com.example.annotation.LoginToken;
 import com.example.annotation.PassToken;
 import com.example.model.R;
 import com.example.model.ResultCode;
-import com.example.entities.TSBaseUser;
-import com.example.service.IBaseUserService;
+import com.example.entities.JwtUser;
+import com.example.service.JwtUserService;
 import com.example.service.TokenService;
-import com.example.vo.TSBaseUserVo;
+import com.example.vo.JwtUserVo;
 import jakarta.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,32 +21,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 
   @Resource
-  private IBaseUserService baseUserService;
+  private JwtUserService jwtUserService;
 
   @Resource
   private TokenService tokenService;
 
-
   /**
-   * http://localhost:8080/login?userName=admin&&password=123456&&id=1
+   * http://localhost:8080/login?userName=admin&&password=123456
    */
   @PassToken
-  @RequestMapping(value = "/login" , method = {RequestMethod.GET,RequestMethod.POST})
-  public R<?> login(TSBaseUserVo userVo){
-    // 获取登陆用户信息
-    TSBaseUser tsBaseUser=new TSBaseUser();
-    tsBaseUser.setId(userVo.getId());
-    tsBaseUser.setUserName(userVo.getUserName());
-    tsBaseUser.setPassword(userVo.getPassword());
-
-    TSBaseUser user = baseUserService.login(tsBaseUser);
+  @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
+  public R<Map<String, Object>> login(JwtUserVo userVo) {
+    JwtUser user = jwtUserService.login(userVo.getUserName(), userVo.getPassword());
     // 从jwt存储的用户信息获取 BaseUserInfo.getUserName()
-    if (ObjectUtils.isEmpty(user)){
+    if (ObjectUtils.isEmpty(user)) {
       return R.failure(ResultCode.of("用户名或密码错误"));
-    }else {
-      Map<String,Object> data = new HashMap<>();
-      data.put("user",user);
-      data.put("token",tokenService.getToken(userVo));
+    } else {
+      Map<String, Object> data = new HashMap<>();
+      userVo.setId(user.getUserId());
+      data.put("user", user);
+      data.put("token", tokenService.getToken(userVo));
       return R.success(data);
     }
   }
@@ -54,8 +48,8 @@ public class LoginController {
 
   @LoginToken
   @RequestMapping("message")
-  public R<String> message(){
-    return R.success("Ok");
+  public R<String> message() {
+    return R.success("message:hello world");
   }
 
 }

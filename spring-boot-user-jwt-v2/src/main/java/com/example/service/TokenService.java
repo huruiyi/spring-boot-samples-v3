@@ -2,7 +2,7 @@ package com.example.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.example.vo.TSBaseUserVo;
+import com.example.vo.JwtUserVo;
 import java.util.Date;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class TokenService {
    */
   private static final long EXPIRE_TIME = Math.multiplyFull(300, 1000);
 
-  public String getToken(TSBaseUserVo user) {
+  public String getToken(JwtUserVo user) {
     Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
     String token = "";
     token = JWT.create().withAudience(user.getId()) // 将 user id 保存到 token 里面

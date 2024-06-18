@@ -9,9 +9,8 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.example.advice.BusinessException;
 import com.example.annotation.LoginToken;
 import com.example.annotation.PassToken;
-import com.example.entities.TSBaseUser;
-import com.example.service.BaseUserInfo;
-import com.example.service.IBaseUserService;
+import com.example.entities.JwtUser;
+import com.example.service.JwtUserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
@@ -24,7 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class JwtInterceptor implements HandlerInterceptor {
 
   @Autowired
-  private IBaseUserService userService;
+  private JwtUserService jwtUserService;
 
   @Override
   public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
@@ -56,7 +55,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         } catch (JWTDecodeException j) {
           throw new BusinessException(401, "未授权");
         }
-        TSBaseUser user = userService.getUser(userId);
+        JwtUser user = jwtUserService.getUser(userId);
         if (user == null) {
           throw new BusinessException(500, "用户不存在，请重新登录");
         }
@@ -67,9 +66,6 @@ public class JwtInterceptor implements HandlerInterceptor {
         } catch (JWTVerificationException e) {
           throw new BusinessException(401, "未授权");
         }
-
-        // 存储登陆用户信息
-        BaseUserInfo.setUser(user.getUserName(), userId);
         return true;
       }
     }

@@ -1,14 +1,16 @@
 package com.example.entities;
 
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("ts_base_user")
-public class TSBaseUser {
+@TableName("jwt_user")
+public class JwtUser {
 
-  private String id;
+  @TableId
+  private String userId;
 
   private String userName;
 

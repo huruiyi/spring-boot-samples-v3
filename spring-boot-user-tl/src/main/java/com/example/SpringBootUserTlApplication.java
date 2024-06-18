@@ -19,7 +19,7 @@ public class SpringBootUserTlApplication implements CommandLineRunner {
   }
 
   @Override
-  public void run(String... args) throws Exception {
+  public void run(String... args) {
     String[] beanDefinitionNames = contextService.getApplicationContext().getBeanDefinitionNames();
     log.info("---------------------------------------------------------------------------------------------------------------");
     for (String name : beanDefinitionNames) {

@@ -19,4 +19,5 @@ public class ApplicationContextService implements ApplicationContextAware {
   public ApplicationContext getApplicationContext() {
     return this.applicationContext;
   }
+
 }

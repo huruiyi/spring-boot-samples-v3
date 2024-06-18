@@ -13,10 +13,7 @@ public class UserInterceptor implements HandlerInterceptor {
   public boolean preHandle(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull Object handler) {
     // 此处实际应该根据header的token解析出用户
     // 本处为了简单，直接虚构一个用户
-    UserInfo userDTO = new UserInfo();
-    userDTO.setUserId(3L);
-    userDTO.setUserName("Tony");
-    UserThreadLocal.set(userDTO);
+    UserThreadLocal.set(UserInfo.builder().userId(3L).userName("Tony").build());
     return true;
   }
 

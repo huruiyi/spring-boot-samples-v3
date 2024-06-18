@@ -20,4 +20,5 @@ public class GlobalExceptionHandler {
     jsonObject.put("message", msg);
     return jsonObject;
   }
+
 }
