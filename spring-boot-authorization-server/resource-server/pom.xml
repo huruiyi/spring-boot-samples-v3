@@ -4,24 +4,31 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.example</groupId>
-    <artifactId>spring-boot-samples-v3</artifactId>
+    <groupId>vip.fairy</groupId>
+    <artifactId>spring-boot-authorization-server</artifactId>
     <version>0.0.1</version>
   </parent>
 
-  <groupId>vip.fairy</groupId>
-  <name>spring-boot-authorizationserver-simple</name>
-  <artifactId>spring-boot-authorizationserver-simple</artifactId>
+  <artifactId>resource-server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>resource-server</name>
 
   <properties>
     <java.version>17</java.version>
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>annotationProcessor</scope>
     </dependency>
   </dependencies>
 
