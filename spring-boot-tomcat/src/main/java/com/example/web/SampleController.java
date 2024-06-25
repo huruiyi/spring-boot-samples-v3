@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleController {
 
-    @Autowired
-    private HelloWorldService helloWorldService;
+  @Autowired
+  private HelloWorldService helloWorldService;
 
-    @GetMapping("/")
-    public String helloWorld() {
-        return this.helloWorldService.getHelloMessage();
-    }
+  @GetMapping("/")
+  public String helloWorld() {
+    return this.helloWorldService.getHelloMessage();
+  }
 
-    @GetMapping(value = "/world", produces = "application/json;charset=UTF-8")
-    public String word() {
-        return "世界你好！";
-    }
+  @GetMapping(value = "/world", produces = "application/json;charset=UTF-8")
+  public String word() {
+    return "世界你好！";
+  }
 
 }

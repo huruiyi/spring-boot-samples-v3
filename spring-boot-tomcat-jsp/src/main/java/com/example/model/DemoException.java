@@ -17,8 +17,8 @@ package com.example.model;/*
 
 public class DemoException extends RuntimeException {
 
-	public DemoException(String message) {
-		super(message);
-	}
+  public DemoException(String message) {
+    super(message);
+  }
 
 }
