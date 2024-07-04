@@ -11,26 +11,26 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class TomcatApplication {
 
-    private static final Log logger = LogFactory.getLog(TomcatApplication.class);
+  private static final Log logger = LogFactory.getLog(TomcatApplication.class);
 
-    @Bean
-    protected ServletContextListener listener() {
-        return new ServletContextListener() {
+  @Bean
+  protected ServletContextListener listener() {
+    return new ServletContextListener() {
 
-            @Override
-            public void contextInitialized(ServletContextEvent sce) {
-                logger.info("ServletContext initialized");
-            }
+      @Override
+      public void contextInitialized(ServletContextEvent sce) {
+        logger.info("ServletContext initialized");
+      }
 
-            @Override
-            public void contextDestroyed(ServletContextEvent sce) {
-                logger.info("ServletContext destroyed");
-            }
-        };
-    }
+      @Override
+      public void contextDestroyed(ServletContextEvent sce) {
+        logger.info("ServletContext destroyed");
+      }
+    };
+  }
 
-    public static void main(String[] args) {
-        SpringApplication.run(TomcatApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(TomcatApplication.class, args);
+  }
 
 }

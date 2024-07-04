@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloWorldService {
 
-	@Value("${test.name:World}")
-	private String name;
+  @Value("${test.name:World}")
+  private String name;
 
-	public String getHelloMessage() {
-		return "Hello " + this.name;
-	}
+  public String getHelloMessage() {
+    return "Hello " + this.name;
+  }
 
 }

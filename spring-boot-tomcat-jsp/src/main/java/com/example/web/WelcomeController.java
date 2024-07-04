@@ -31,30 +31,30 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 public class WelcomeController {
 
-    @Value("${application.message:Hello World}")
-    private String message = "Hello World";
+  @Value("${application.message:Hello World}")
+  private String message = "Hello World";
 
-    @GetMapping("/")
-    public String welcome(Map<String, Object> model) {
-        model.put("time", new Date());
-        model.put("message", this.message);
-        return "welcome";
-    }
+  @GetMapping("/")
+  public String welcome(Map<String, Object> model) {
+    model.put("time", new Date());
+    model.put("message", this.message);
+    return "welcome";
+  }
 
-    @RequestMapping("/fail")
-    public String fail() {
-        throw new DemoException("Oh dear!");
-    }
+  @RequestMapping("/fail")
+  public String fail() {
+    throw new DemoException("Oh dear!");
+  }
 
-    @RequestMapping("/fail2")
-    public String fail2() {
-        throw new IllegalStateException();
-    }
+  @RequestMapping("/fail2")
+  public String fail2() {
+    throw new IllegalStateException();
+  }
 
-    @ExceptionHandler(DemoException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody DemoRestResponse handleMyRuntimeException(DemoException exception) {
-        return new DemoRestResponse("Some data I want to send back to the client.");
-    }
+  @ExceptionHandler(DemoException.class)
+  @ResponseStatus(HttpStatus.BAD_REQUEST)
+  public @ResponseBody DemoRestResponse handleMyRuntimeException(DemoException exception) {
+    return new DemoRestResponse("Some data I want to send back to the client.");
+  }
 
 }
