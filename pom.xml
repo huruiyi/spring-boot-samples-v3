@@ -20,6 +20,7 @@
   <modules>
     <module>spring-boot-authorization-server</module>
     <module>spring-boot-authorizationserver-simple</module>
+    <module>spring-boot-authorizationserver-simple-v2</module>
     <module>spring-boot-basic</module>
     <module>spring-boot-jpa-oracle</module>
     <module>spring-boot-keycloak-oauth2</module>
