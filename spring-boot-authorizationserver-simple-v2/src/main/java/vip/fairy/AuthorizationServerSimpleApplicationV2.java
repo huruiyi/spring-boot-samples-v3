@@ -7,14 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AuthorizationServerSimpleApplicationV2 {
 
     /**
-   * http://localhost:8080/.well-known/openid-configuration
-   * <p>
-   * //http://user:password@127.0.0.1:8080/oauth2/authorize?client_id=oidc-client&response_type=code&scope=openid&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/oidc-client
-   * <p>
-   * http://127.0.0.1:8080/oauth2/authorize?client_id=oidc-client&response_type=code&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/oidc-client
-   * <p>
-   * <a href="http://127.0.0.1:8080/oauth2/authorize?client_id=oidc-client&response_type=code&redirect_uri=http://127.0.0.1:8080/login/oauth2/code/oidc-client&continue&scope=blog.write blog.read openid">...</a> bb
-   * <p>
+    * <p>
    * @param args
    */
   public static void main(String[] args) {
