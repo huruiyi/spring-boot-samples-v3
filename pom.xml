@@ -23,7 +23,8 @@
     <module>spring-boot-authorizationserver-simple-v2</module>
     <module>spring-boot-basic</module>
     <module>spring-boot-jpa-oracle</module>
-    <module>spring-boot-keycloak-oauth2</module>
+    <module>spring-boot-keycloak-oauth2-v1</module>
+    <module>spring-boot-keycloak-oauth2-v2</module>
     <module>spring-boot-keycloak-oauth2-client</module>
     <module>spring-boot-keycloak-resource-server</module>
     <module>spring-boot-openapi</module>
