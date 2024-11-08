@@ -25,7 +25,7 @@
     <module>spring-boot-jpa-oracle</module>
     <module>spring-boot-keycloak-oauth2-v1</module>
     <module>spring-boot-keycloak-oauth2-v2</module>
-    <module>spring-boot-keycloak-oauth2-client</module>
+    <module>spring-boot-keycloak-oauth2-v3</module>
     <module>spring-boot-keycloak-resource-server</module>
     <module>spring-boot-openapi</module>
     <module>spring-boot-redis</module>
@@ -46,4 +46,16 @@
     <module>spring-boot-user-jwt-v2</module>
     <module>spring-boot-user-tl</module>
   </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

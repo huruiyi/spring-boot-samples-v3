@@ -39,15 +39,15 @@ public class SecurityConfig {
   }
 
   private ClientRegistration keycloakClientRegistration() {
-    return ClientRegistration.withRegistrationId("howtodoinjava-realm")
+    return ClientRegistration.withRegistrationId("fairy.vip-login")
         .clientId("employee-management-api")
-        .clientSecret("cbixGai1r0SHthgke2pLmjgvv6rif5f5")
+        .clientSecret("CMxfU0cHISpsIigHpTNytCUTgIQsbz7q")
         .redirectUri("http://localhost:9090/login/oauth2/code/employee-management-api")
-        .issuerUri("http://localhost:8080/realms/howtodoinjava")
-        .authorizationUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/auth")
-        .tokenUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/token")
-        .userInfoUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/userinfo")
-        .jwkSetUri("http://localhost:8080/realms/howtodoinjava/protocol/openid-connect/certs")
+        .issuerUri("https://keycloak.fairy.vip/realms/howtodoinjava")
+        .authorizationUri("https://keycloak.fairy.vip/realms/howtodoinjava/protocol/openid-connect/auth")
+        .tokenUri("https://keycloak.fairy.vip/realms/howtodoinjava/protocol/openid-connect/token")
+        .userInfoUri("https://keycloak.fairy.vip/realms/howtodoinjava/protocol/openid-connect/userinfo")
+        .jwkSetUri("https://keycloak.fairy.vip/realms/howtodoinjava/protocol/openid-connect/certs")
         .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
         .scope("openid")
         .userNameAttributeName("name")
