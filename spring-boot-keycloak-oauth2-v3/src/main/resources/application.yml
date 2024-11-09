@@ -39,5 +39,11 @@ keycloak-admin:
   client-id: employee-api
   client-secret: 4lwoiLbHLeBOfGR4ys3m7GU0w9rmvtxG
 
-
+#.\kc.bat start-dev --db mysql --db-url jdbc:mysql://localhost:3306/keycloak26 --db-username root --db-password root
+#
+#.\kc.bat start-dev --db mysql --db-url jdbc:mysql://localhost:3306/keycloak25 --db-username root --db-password root --import-realm mes-realm
+#
 #.\kc.bat  export --dir mes-realm --realm mes
+#
+# Script upload is disabled
+#.\kc.bat import --dir mes --db mysql --db-url jdbc:mysql://localhost:3306/keycloak26 --db-username root --db-password root

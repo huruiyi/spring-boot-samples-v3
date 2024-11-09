@@ -1,4 +1,4 @@
-package com.howtodoinjava.config;
+package vip.fairy.authorizationserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
