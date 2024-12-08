@@ -9,21 +9,21 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-    /*
-     * @Autowired
-     *
-     * @Qualifier("userDao")
-     */
-    /* @Autowired 加 @Qualifier("userDao") 同时使用 指向UserDao的save方法 (按名字注入) */
+  /*
+   * @Autowired
+   *
+   * @Qualifier("userDao")
+   */
+  /* @Autowired 加 @Qualifier("userDao") 同时使用 指向UserDao的save方法 (按名字注入) */
 
-    @Autowired
-    /* @Autowired 指向自己的save方法(按照属性注入) */
+  @Autowired
+  /* @Autowired 指向自己的save方法(按照属性注入) */
 
-    private UserDao userDao;
+  private UserDao userDao;
 
-    @Override
-    public void save() {
-        System.out.println("UserServiceImpl");
-        userDao.save();
-    }
+  @Override
+  public void save() {
+    System.out.println("UserServiceImpl");
+    userDao.save();
+  }
 }

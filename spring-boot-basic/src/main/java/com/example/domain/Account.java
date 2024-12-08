@@ -2,38 +2,36 @@ package com.example.domain;
 
 public class Account {
 
-    private Long id;
+  private Long id;
+  private String name;
+  private Double money;
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    private String name;
+  public String getName() {
+    return name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public Double getMoney() {
+    return money;
+  }
 
-    private Double money;
+  public void setMoney(Double money) {
+    this.money = money;
+  }
 
-    public Double getMoney() {
-        return money;
-    }
-
-    public void setMoney(Double money) {
-        this.money = money;
-    }
-
-    @Override
-    public String toString() {
-        return "Account [id=" + id + ", name=" + name + ", money=" + money + "]";
-    }
+  @Override
+  public String toString() {
+    return "Account [id=" + id + ", name=" + name + ", money=" + money + "]";
+  }
 }

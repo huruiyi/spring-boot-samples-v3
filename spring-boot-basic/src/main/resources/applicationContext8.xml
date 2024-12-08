@@ -7,8 +7,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="productService" class="com.example.demo8.ProductService">
-        <property name="productDao" ref="productDao"></property>
-        <property name="orderDao" ref="orderDao"></property>
+        <property name="productDao" ref="productDao"/>
+        <property name="orderDao" ref="orderDao"/>
     </bean>
 
     <!-- 在没有扫描的情况下,使用属性注入的注解:@Resource, @AutoWired,@Qulifier, @Value -->
@@ -16,6 +16,6 @@
     <bean id="orderService" class="com.example.demo8.OrderService">
     </bean>
 
-    <bean id="productDao" class="com.example.demo8.ProductDao"></bean>
-    <bean id="orderDao" class="com.example.demo8.OrderDao"></bean>
+    <bean id="productDao" class="com.example.demo8.ProductDao"/>
+    <bean id="orderDao" class="com.example.demo8.OrderDao"/>
 </beans>

@@ -3,43 +3,44 @@ package com.example.demoO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class SequenceGenerator {
-    private PrefixGenerator prefixGenerator;
-    private String suffix;
-    private int initial;
-    private int counter;
 
-    public SequenceGenerator() {
-    }
+  private PrefixGenerator prefixGenerator;
+  private String suffix;
+  private int initial;
+  private int counter;
 
-    public SequenceGenerator(PrefixGenerator prefixGenerator, String suffix, int initial) {
-        this.prefixGenerator = prefixGenerator;
-        this.suffix = suffix;
-        this.initial = initial;
-    }
+  public SequenceGenerator() {
+  }
 
-    //@Autowired
-    public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
-        this.prefixGenerator = prefixGenerator;
-    }
+  public SequenceGenerator(PrefixGenerator prefixGenerator, String suffix, int initial) {
+    this.prefixGenerator = prefixGenerator;
+    this.suffix = suffix;
+    this.initial = initial;
+  }
 
-    @Autowired
-    public void myOwnCustomInjectionName(PrefixGenerator prefixGenerator) {
-        this.prefixGenerator = prefixGenerator;
-    }
+  //@Autowired
+  public void setPrefixGenerator(PrefixGenerator prefixGenerator) {
+    this.prefixGenerator = prefixGenerator;
+  }
 
-    public void setSuffix(String suffix) {
-        this.suffix = suffix;
-    }
+  @Autowired
+  public void myOwnCustomInjectionName(PrefixGenerator prefixGenerator) {
+    this.prefixGenerator = prefixGenerator;
+  }
 
-    public void setInitial(int initial) {
-        this.initial = initial;
-    }
+  public void setSuffix(String suffix) {
+    this.suffix = suffix;
+  }
 
-    public synchronized String getSequence() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefixGenerator.getPrefix());
-        builder.append(initial + counter++);
-        builder.append(suffix);
-        return builder.toString();
-    }
+  public void setInitial(int initial) {
+    this.initial = initial;
+  }
+
+  public synchronized String getSequence() {
+    StringBuilder builder = new StringBuilder();
+    builder.append(prefixGenerator.getPrefix());
+    builder.append(initial + counter++);
+    builder.append(suffix);
+    return builder.toString();
+  }
 }

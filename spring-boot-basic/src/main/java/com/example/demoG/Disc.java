@@ -2,21 +2,21 @@ package com.example.demoG;
 
 public class Disc extends Product {
 
-    private int capacity;
+  private int capacity;
 
-    public Disc() {
-        super();
-    }
+  public Disc() {
+    super();
+  }
 
-    public Disc(String name, double price) {
-        super(name, price);
-    }
+  public Disc(String name, double price) {
+    super(name, price);
+  }
 
-    public int getCapacity() {
-        return capacity;
-    }
+  public int getCapacity() {
+    return capacity;
+  }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
+  public void setCapacity(int capacity) {
+    this.capacity = capacity;
+  }
 }

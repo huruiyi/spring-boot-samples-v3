@@ -5,12 +5,12 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class Main {
 
-    public static void main(String[] args) {
-        ApplicationContext context = new GenericXmlApplicationContext("applicationContextQ.xml");
+  public static void main(String[] args) {
+    ApplicationContext context = new GenericXmlApplicationContext("applicationContextQ.xml");
 
-        SequenceGenerator generator = (SequenceGenerator) context.getBean("sequenceGenerator");
+    SequenceGenerator generator = (SequenceGenerator) context.getBean("sequenceGenerator");
 
-        System.out.println(generator.getSequence());
-        System.out.println(generator.getSequence());
-    }
+    System.out.println(generator.getSequence());
+    System.out.println(generator.getSequence());
+  }
 }

@@ -10,11 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration("classpath:applicationContextG.tx.xml")
 public class SpringDemoTx1 {
 
-	@Resource(name = "accountService")
-	private AccountService accountServicea;
+  @Resource(name = "accountService")
+  private AccountService accountServicea;
 
-	@Test
-	public void demo1() {
-		accountServicea.transfer("如花", "小宝", 3000d);
-	}
+  @Test
+  public void demo1() {
+    accountServicea.transfer("如花", "小宝", 3000d);
+  }
 }

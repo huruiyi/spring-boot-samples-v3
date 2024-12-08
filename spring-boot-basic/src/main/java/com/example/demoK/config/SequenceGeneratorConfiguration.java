@@ -6,16 +6,16 @@ import org.springframework.context.annotation.FilterType;
 
 @Configuration
 @ComponentScan(
-        includeFilters = {
-                @ComponentScan.Filter(
-                        type = FilterType.REGEX,
-                        pattern = {"com.example.demoK.*Dao", "com.example.demoK.*Impl"})
-        },
-        excludeFilters = {
-                @ComponentScan.Filter(
-                        type = FilterType.ANNOTATION,
-                        classes = {org.springframework.stereotype.Controller.class}) }
-                )
+    includeFilters = {
+        @ComponentScan.Filter(
+            type = FilterType.REGEX,
+            pattern = {"com.example.demoK.*Dao", "com.example.demoK.*Impl"})
+    },
+    excludeFilters = {
+        @ComponentScan.Filter(
+            type = FilterType.ANNOTATION,
+            classes = {org.springframework.stereotype.Controller.class})}
+)
 public class SequenceGeneratorConfiguration {
 
 }

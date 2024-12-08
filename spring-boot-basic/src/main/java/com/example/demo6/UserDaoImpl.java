@@ -18,16 +18,17 @@ import org.springframework.stereotype.Repository;
 /* @Service("userDao") */
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
-    private String name;
 
-    @Value("小明")
-    public void setName(String name) {
-        this.name = name;
-    }
+  private String name;
 
-    @Override
-    public void save() {
-        System.out.println("UserDaoImpl..." + name);
-    }
+  @Value("小明")
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public void save() {
+    System.out.println("UserDaoImpl..." + name);
+  }
 
 }

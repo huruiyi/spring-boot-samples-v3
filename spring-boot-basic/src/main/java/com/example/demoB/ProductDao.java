@@ -1,11 +1,12 @@
 package com.example.demoB;
 
 public interface ProductDao {
-    public void save();
 
-    public String delete();
+  public void save();
 
-    public void update();
+  public String delete();
 
-    public void find();
+  public void update();
+
+  public void find();
 }

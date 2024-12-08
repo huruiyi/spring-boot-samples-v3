@@ -5,18 +5,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class AccountServiceImpl implements AccountService {
 
-	// 注入Dao
-	private AccountDao accountDao;
+  // 注入Dao
+  private AccountDao accountDao;
 
-	public void setAccountDao(AccountDao accountDao) {
-		this.accountDao = accountDao;
-	}
+  public void setAccountDao(AccountDao accountDao) {
+    this.accountDao = accountDao;
+  }
 
-	@Override
-	public void transfer(final String from, final String to, final Double money) {
-		accountDao.outMoney(from, money);
-		//int d = 1 / 0;
-		accountDao.inMoney(to, money);
-	}
+  @Override
+  public void transfer(final String from, final String to, final Double money) {
+    accountDao.outMoney(from, money);
+    //int d = 1 / 0;
+    accountDao.inMoney(to, money);
+  }
 
 }

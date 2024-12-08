@@ -5,12 +5,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.example.demoM");
+  public static void main(String[] args) {
+    ApplicationContext context = new AnnotationConfigApplicationContext("com.example.demoM");
 
-        SequenceService sequenceService = context.getBean(SequenceService.class);
+    SequenceService sequenceService = context.getBean(SequenceService.class);
 
-        System.out.println(sequenceService.generate("IT"));
-        System.out.println(sequenceService.generate("IT"));
-    }
+    System.out.println(sequenceService.generate("IT"));
+    System.out.println(sequenceService.generate("IT"));
+  }
 }

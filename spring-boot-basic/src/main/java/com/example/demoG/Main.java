@@ -7,14 +7,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(ShopConfiguration.class);
+    ApplicationContext context = new AnnotationConfigApplicationContext(ShopConfiguration.class);
 
-        Product product1 = context.getBean("aaa", Product.class);
-        System.out.println(product1);
+    Product product1 = context.getBean("aaa", Product.class);
+    System.out.println(product1);
 
-        Product product2 = context.getBean("cdrw", Product.class);
-        System.out.println(product2);
-    }
+    Product product2 = context.getBean("cdrw", Product.class);
+    System.out.println(product2);
+  }
 }

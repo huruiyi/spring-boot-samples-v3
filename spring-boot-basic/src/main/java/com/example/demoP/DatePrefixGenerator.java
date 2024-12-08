@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Primary
 public class DatePrefixGenerator implements PrefixGenerator {
 
-    public String getPrefix() {
-        DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-        return formatter.format(new Date());
-    }
+  public String getPrefix() {
+    DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+    return formatter.format(new Date());
+  }
 }

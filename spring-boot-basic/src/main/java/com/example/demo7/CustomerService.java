@@ -17,17 +17,17 @@ import org.springframework.stereotype.Service;
 @Scope("singleton")
 public class CustomerService {
 
-    @PostConstruct
-    public void init() {
-        System.out.println("init......");
-    }
+  @PostConstruct
+  public void init() {
+    System.out.println("init......");
+  }
 
-    public void save() {
-        System.out.println("save......");
-    }
+  public void save() {
+    System.out.println("save......");
+  }
 
-    @PreDestroy
-    public void destroy() {
-        System.out.println("destroy......");
-    }
+  @PreDestroy
+  public void destroy() {
+    System.out.println("destroy......");
+  }
 }
