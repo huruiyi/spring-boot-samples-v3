@@ -32,6 +32,7 @@
     <module>spring-boot-security-h2</module>
     <module>spring-boot-security-jwt</module>
     <module>spring-boot-security-jwt-v2</module>
+    <module>spring-boot-security-jwt-v3</module>
     <module>spring-boot-security-memory</module>
     <module>spring-boot-security-mysql</module>
     <module>spring-boot-session-jdbc</module>

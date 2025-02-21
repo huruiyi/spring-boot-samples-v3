@@ -15,7 +15,6 @@ public class Demo1 {
   }
 
   public static void main(String[] args) {
-
     Map<String, String> extraClaims = new HashMap<>();
     extraClaims.put("username", "admin");
     extraClaims.put("password", "123456");
