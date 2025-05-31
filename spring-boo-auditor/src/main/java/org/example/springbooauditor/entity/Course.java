@@ -1,0 +1,19 @@
+package org.example.springbooauditor.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Data
+@Entity
+public class Course extends BaseEntity {
+
+  @Id
+  @GeneratedValue
+  private Long id;
+
+  private String name;
+
+  private String description;
+}

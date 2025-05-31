@@ -1,0 +1,19 @@
+body {
+  background-color: #DADADA;
+  background-image: url("/image/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+body > .grid {
+  height: 100%;
+}
+
+.column {
+  max-width: 450px;
+}
+
+.headerColor {
+  color: aliceblue;
+}

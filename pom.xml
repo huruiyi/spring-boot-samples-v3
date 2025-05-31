@@ -18,6 +18,7 @@
   </parent>
 
   <modules>
+    <module>spring-boo-auditor</module>
     <module>spring-boot-authorization-server</module>
     <module>spring-boot-authorizationserver-simple</module>
     <module>spring-boot-authorizationserver-simple-v2</module>
