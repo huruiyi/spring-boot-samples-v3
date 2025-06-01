@@ -1,10 +1,10 @@
-package org.example.springbooauditor.service.impl;
+package vip.fairy.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-import org.example.springbooauditor.entity.Course;
-import org.example.springbooauditor.repisitory.CourseRepository;
-import org.example.springbooauditor.service.CourseService;
+import vip.fairy.entity.Course;
+import vip.fairy.repisitory.CourseRepository;
+import vip.fairy.service.CourseService;
 import org.springframework.stereotype.Service;
 
 @Service

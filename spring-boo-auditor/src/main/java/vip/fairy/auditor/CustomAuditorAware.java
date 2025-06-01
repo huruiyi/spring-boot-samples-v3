@@ -1,4 +1,4 @@
-package org.example.springbooauditor.auditor;
+package vip.fairy.auditor;
 
 import java.util.Optional;
 import org.springframework.data.domain.AuditorAware;

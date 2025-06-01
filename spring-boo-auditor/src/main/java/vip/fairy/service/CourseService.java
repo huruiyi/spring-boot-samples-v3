@@ -1,8 +1,8 @@
-package org.example.springbooauditor.service;
+package vip.fairy.service;
 
 import java.util.List;
 import java.util.Optional;
-import org.example.springbooauditor.entity.Course;
+import vip.fairy.entity.Course;
 
 public interface CourseService {
     Course save(Course course);

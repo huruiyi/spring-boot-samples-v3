@@ -1,9 +1,9 @@
-package org.example.springbooauditor.web;
+package vip.fairy.web;
 
 import java.util.List;
 import java.util.Optional;
-import org.example.springbooauditor.entity.Course;
-import org.example.springbooauditor.service.CourseService;
+import vip.fairy.entity.Course;
+import vip.fairy.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

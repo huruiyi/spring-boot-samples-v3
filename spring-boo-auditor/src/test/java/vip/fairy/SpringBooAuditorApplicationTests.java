@@ -1,4 +1,4 @@
-package org.example.springbooauditor;
+package vip.fairy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -10,8 +10,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
-import org.example.springbooauditor.entity.User;
-import org.example.springbooauditor.repisitory.UserRepository;
+import vip.fairy.entity.User;
+import vip.fairy.repisitory.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

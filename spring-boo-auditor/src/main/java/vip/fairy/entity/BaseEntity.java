@@ -1,4 +1,4 @@
-package org.example.springbooauditor.entity;
+package vip.fairy.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;

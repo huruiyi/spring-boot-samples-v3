@@ -1,4 +1,4 @@
-package org.example.springbooauditor.config;
+package vip.fairy.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

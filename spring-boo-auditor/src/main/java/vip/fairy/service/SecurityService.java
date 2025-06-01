@@ -1,6 +1,6 @@
-package org.example.springbooauditor.service;
+package vip.fairy.service;
 
-import org.example.springbooauditor.repisitory.CourseRepository;
+import vip.fairy.repisitory.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

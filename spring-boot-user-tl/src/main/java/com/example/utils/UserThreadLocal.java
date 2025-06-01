@@ -10,8 +10,7 @@ public class UserThreadLocal {
   private UserThreadLocal() {
   }
 
-  private static final ThreadLocal<UserInfo> USER_INFO_THREAD_LOCAL =
-      new ThreadLocal<>();
+  private static final ThreadLocal<UserInfo> USER_INFO_THREAD_LOCAL = new ThreadLocal<>();
 
   /**
    * 清除用户信息

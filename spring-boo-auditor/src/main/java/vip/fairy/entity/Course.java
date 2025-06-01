@@ -1,4 +1,4 @@
-package org.example.springbooauditor.entity;
+package vip.fairy.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

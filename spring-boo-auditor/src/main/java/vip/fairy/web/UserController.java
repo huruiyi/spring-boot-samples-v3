@@ -1,4 +1,4 @@
-package org.example.springbooauditor.web;
+package vip.fairy.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

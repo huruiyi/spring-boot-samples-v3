@@ -1,7 +1,7 @@
-package org.example.springbooauditor.repisitory;
+package vip.fairy.repisitory;
 
 
-import org.example.springbooauditor.entity.Course;
+import vip.fairy.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
