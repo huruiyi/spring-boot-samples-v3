@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(Exception.class)
   public Object handleException(Exception e) {
     String msg = e.getMessage();
-    if (msg == null || msg.equals("")) {
+    if (msg == null || msg.isEmpty()) {
       msg = "服务器出错";
     }
     JSONObject jsonObject = new JSONObject();
