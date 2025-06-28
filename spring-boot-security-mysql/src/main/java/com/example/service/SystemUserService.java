@@ -2,7 +2,7 @@ package com.example.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.mapper.SystemUserMapper;
-import com.example.model.SystemUser;
+import com.example.entity.SystemUser;
 import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

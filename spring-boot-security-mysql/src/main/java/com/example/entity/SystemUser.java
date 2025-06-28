@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -7,7 +7,9 @@ import lombok.Data;
 @TableName("user")
 public class SystemUser {
 
-  private Integer id;
-   private String username;
+  private Long id;
+
+  private String username;
+
   private String password;
 }
