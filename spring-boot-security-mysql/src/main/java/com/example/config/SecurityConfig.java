@@ -5,16 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 /**
  * WebSecurityConfigurerAdapter
@@ -45,20 +46,21 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((auth) -> {
+      auth.requestMatchers("/user/login").permitAll();
       auth.requestMatchers(HttpMethod.POST, "/register").permitAll();
       auth.requestMatchers("/**").hasAnyRole("USER");
       auth.anyRequest().authenticated();
     });
 
     http.logout(logoutConfigurer -> {
-      logoutConfigurer.deleteCookies("remove");
+      logoutConfigurer.deleteCookies("JSESSIONID");
       logoutConfigurer.invalidateHttpSession(false);
       logoutConfigurer.logoutUrl("/user/logout");
       logoutConfigurer.logoutSuccessUrl("/custom-logout");
     });
 
     http.formLogin(formLoginSpec -> {
-      formLoginSpec.loginPage("/user/login").permitAll();
+      formLoginSpec.loginPage("/user/login");
       formLoginSpec.loginProcessingUrl("/login");
       formLoginSpec.defaultSuccessUrl("/home/");
       // 使用 successForwardUrl 会导致/login 报错：type=Method Not Allowed, status=405 ->将此处的successForwardUrl使用defaultSuccessUrl替换
@@ -74,7 +76,7 @@ public class SecurityConfig {
       r.tokenRepository(persistentTokenRepository());
       r.rememberMeParameter("rm");
     });
-    http.httpBasic(Customizer.withDefaults());
+    http.httpBasic(AbstractHttpConfigurer::disable);
     return http.build();
   }
 
@@ -91,5 +93,11 @@ public class SecurityConfig {
   public WebSecurityCustomizer ignoringCustomizer() {
     return (web) -> web.ignoring().requestMatchers("/css/**", "/image/**");
   }
+
+  @Bean
+  public HttpSessionEventPublisher httpSessionEventPublisher() {
+    return new HttpSessionEventPublisher();
+  }
+
 
 }
