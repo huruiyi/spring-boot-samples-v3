@@ -23,4 +23,12 @@ public class Employee {
 
   @Column(length = 1000)
   private String bio;
+
+  public Employee(String name, String phone, String email, String position, String bio) {
+    this.name = name;
+    this.phone = phone;
+    this.email = email;
+    this.position = position;
+    this.bio = bio;
+  }
 }

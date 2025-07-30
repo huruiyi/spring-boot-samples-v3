@@ -18,13 +18,9 @@ public class EmployeeRestApiApplication implements CommandLineRunner {
   }
 
   @Override
-  public void run(String... args) throws Exception {
-    employeeRepository.save(
-        new Employee(1L, "Lokesh", "123456", "admin@howtodoinjava", "Author", "Java Learner")
-    );
+  public void run(String... args) {
+    employeeRepository.save(new Employee("Lokesh", "123456", "admin@howtodoinjava", "Author", "Java Learner"));
 
-    employeeRepository.save(
-        new Employee(2L, "Alex", "999999", "info@howtodoinjava", "Author", "Another Java Learner")
-    );
+    employeeRepository.save(new Employee("Alex", "999999", "info@howtodoinjava", "Author", "Another Java Learner"));
   }
 }
