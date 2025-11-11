@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -33,7 +34,6 @@ import org.springframework.security.web.session.HttpSessionEventPublisher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
 
   @Autowired
   private DataSource dataSource;
@@ -68,6 +68,11 @@ public class SecurityConfig {
       formLoginSpec.passwordParameter("pwd");
     });
 
+    http.sessionManagement(s -> {
+      s.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
+      s.maximumSessions(1);
+    });
+
     http.csrf(httpSecurityCsrfConfigurer -> {
       httpSecurityCsrfConfigurer.csrfTokenRepository(new CookieCsrfTokenRepository());
     });
@@ -75,10 +80,13 @@ public class SecurityConfig {
     http.rememberMe(r -> {
       r.tokenRepository(persistentTokenRepository());
       r.rememberMeParameter("rm");
+      r.tokenValiditySeconds(86400);//24小时有效
+      r.useSecureCookie(true);
     });
     http.httpBasic(AbstractHttpConfigurer::disable);
     return http.build();
   }
+
 
   @Bean
   public PersistentTokenRepository persistentTokenRepository() {
@@ -88,6 +96,7 @@ public class SecurityConfig {
     // tokenRepository.setCreateTableOnStartup(true);
     return tokenRepository;
   }
+
 
   @Bean
   public WebSecurityCustomizer ignoringCustomizer() {

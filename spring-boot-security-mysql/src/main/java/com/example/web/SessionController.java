@@ -12,12 +12,8 @@ public class SessionController {
 
   @GetMapping("/session-info")
   public String sessionInfo(Authentication authentication, HttpSession session) {
-    return String.format(
-        "用户名: %s <br> Session ID: %s <br> 创建时间: %s",
-        authentication.getName(),
-        session.getId(),
-        Instant.ofEpochMilli(session.getCreationTime())
-    );
+    return String.format("用户名: %s <br> Session ID: %s <br> 创建时间: %s",
+        authentication.getName(), session.getId(), Instant.ofEpochMilli(session.getCreationTime()));
   }
 
   @GetMapping("/my-session")
