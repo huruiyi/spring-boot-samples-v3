@@ -28,7 +28,7 @@ public class LoginSuccessListener implements ApplicationListener<AuthenticationS
         String sessionId = session.getId();
 
         // 4. 记录日志（实际中可存入数据库）
-        System.out.printf("[登录成功] 用户: %s | SessionID: %s | 时间: %s%n", username, sessionId, Instant.now());
+        System.out.printf("LoginSuccessListener,[登录成功] 用户: %s | SessionID: %s | 时间: %s%n", username, sessionId, Instant.now());
 
         // 5. 可选的：将 session 信息存入应用上下文
         HashMapSessionRegistry.registerSession(username, sessionId);

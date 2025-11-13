@@ -13,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
@@ -43,6 +44,17 @@ public class SecurityConfig {
     return new BCryptPasswordEncoder();
   }
 
+
+  @Bean
+  public CustomLogoutHandler customLogoutHandler() {
+    return new CustomLogoutHandler();
+  }
+
+  @Bean
+  public LogoutSuccessHandler customLogoutSuccessHandler() {
+    return new CustomLogoutSuccessHandler();
+  }
+
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((auth) -> {
@@ -53,10 +65,12 @@ public class SecurityConfig {
     });
 
     http.logout(logoutConfigurer -> {
-      logoutConfigurer.deleteCookies("JSESSIONID");
-      logoutConfigurer.invalidateHttpSession(false);
+      logoutConfigurer.deleteCookies("SESSION");
+      logoutConfigurer.invalidateHttpSession(true);
       logoutConfigurer.logoutUrl("/user/logout");
-      logoutConfigurer.logoutSuccessUrl("/custom-logout");
+      logoutConfigurer.logoutSuccessUrl("/user/login");
+      logoutConfigurer.addLogoutHandler(customLogoutHandler());
+      logoutConfigurer.logoutSuccessHandler(customLogoutSuccessHandler());
     });
 
     http.formLogin(formLoginSpec -> {

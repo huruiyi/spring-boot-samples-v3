@@ -15,3 +15,6 @@ create table user
     password varchar(300) null
 );
 
+
+INSERT INTO `security-db`.user (username, password)
+VALUES ('user', '$2a$10$wY.aM2WHDbQ6CTquuq5ZHeTE1nf0yDYJi7S/OEvF4fhjRQE1.Dj52');

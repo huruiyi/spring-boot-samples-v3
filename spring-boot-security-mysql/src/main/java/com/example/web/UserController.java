@@ -26,11 +26,6 @@ public class UserController {
     return "login";
   }
 
-  @GetMapping("/logout")
-  public String performLogout() {
-    return "redirect:/user/login";
-  }
-
   private void invalidateCookie(HttpServletRequest request, HttpServletResponse response) {
     HttpSession session = request.getSession(false);
     if (session != null) {
