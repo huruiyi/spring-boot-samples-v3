@@ -25,17 +25,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRestController {
 
+  @Autowired
+  Environment environment;
 
-    @Autowired
-	Environment environment;
+  public String getPort() {
+    return environment.getProperty("local.server.port");
+  }
 
-    public String getPort() {
-        return environment.getProperty("local.server.port");
-    }
-
-    @GetMapping("/")
-    String uid(HttpSession session) {
-        return "port:" + getPort() + "\n,session-id:" + session.getId();
-    }
+  @GetMapping("/")
+  String uid(HttpSession session) {
+    return "port:" + getPort() + "\n,session-id:" + session.getId();
+  }
 
 }

@@ -29,6 +29,8 @@
     <module>spring-boot-keycloak-oauth2-v3</module>
     <module>spring-boot-keycloak-resource-server</module>
     <module>spring-boot-openapi</module>
+    <module>spring-boot-rabbitmq-consumer</module>
+    <module>spring-boot-rabbitmq-producer</module>
     <module>spring-boot-redis</module>
     <module>spring-boot-security-h2</module>
     <module>spring-boot-security-jwt</module>
@@ -37,6 +39,7 @@
     <module>spring-boot-security-jwt-v4</module>
     <module>spring-boot-security-memory</module>
     <module>spring-boot-security-mysql</module>
+    <module>spring-boot-session-findbyusername</module>
     <module>spring-boot-session-jdbc</module>
     <module>spring-boot-session-redis</module>
     <module>spring-boot-session-mongo</module>
