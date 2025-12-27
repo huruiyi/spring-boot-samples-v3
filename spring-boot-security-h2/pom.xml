@@ -4,12 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.example</groupId>
+    <groupId>vip.fairy</groupId>
     <artifactId>spring-boot-samples-v3</artifactId>
     <version>0.0.1</version>
   </parent>
 
-  <groupId>vip.fairy</groupId>
   <artifactId>spring-boot-security-h2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-boot-security-h2</name>

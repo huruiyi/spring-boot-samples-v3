@@ -37,7 +37,7 @@ public class EmployeeController {
 
   @PutMapping("/{id}")
   public ResponseEntity<Employee> updateEmployee(@PathVariable Long id,
-                                                 @RequestBody Employee employee) {
+      @RequestBody Employee employee) {
     Optional<Employee> existingEmployee = employeeService.updateEmployee(id,
         employee);
     return existingEmployee.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());

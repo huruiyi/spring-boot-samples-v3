@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.example</groupId>
+    <groupId>vip.fairy</groupId>
     <artifactId>spring-boot-samples-v3</artifactId>
     <version>0.0.1</version>
   </parent>
@@ -12,10 +12,6 @@
   <name>spring-boot-user-attribute</name>
   <artifactId>spring-boot-user-attribute</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
-  <properties>
-    <java.version>17</java.version>
-  </properties>
 
   <dependencies>
     <dependency>

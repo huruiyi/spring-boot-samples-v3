@@ -4,19 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
+    <groupId>vip.fairy</groupId>
     <artifactId>spring-boot-samples-v3</artifactId>
-    <groupId>com.example</groupId>
     <version>0.0.1</version>
   </parent>
 
   <name>Spring-boot-keycloak-oauth2</name>
   <artifactId>spring-boot-keycloak-oauth2-v1</artifactId>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
 
   <dependencies>
     <dependency>

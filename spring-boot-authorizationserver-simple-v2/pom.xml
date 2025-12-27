@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.example</groupId>
+    <groupId>vip.fairy</groupId>
     <artifactId>spring-boot-samples-v3</artifactId>
     <version>0.0.1</version>
   </parent>
@@ -13,23 +13,7 @@
   <artifactId>spring-boot-authorizationserver-simple-v2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>spring-boot-authorizationserver-simple-v2</name>
-  <description>spring-boot-authorizationserver-simple-v2</description>
-  <url/>
-  <licenses>
-    <license/>
-  </licenses>
-  <developers>
-    <developer/>
-  </developers>
-  <scm>
-    <connection/>
-    <developerConnection/>
-    <tag/>
-    <url/>
-  </scm>
-  <properties>
-    <java.version>17</java.version>
-  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
