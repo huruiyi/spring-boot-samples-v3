@@ -53,6 +53,8 @@
 
 ### 数据访问相关
 - [spring-boot-jpa-oracle](spring-boot-jpa-oracle) - JPA + Oracle数据库
+- [spring-boot-multiple-datasource](spring-boot-multiple-datasource) - 多数据源配置
+- [spring-boot-multiple-datasource-transaction](spring-boot-multiple-datasource-transaction) - 多数据源分布式事务（Seata）
 - [spring-boot-redis](spring-boot-redis) - Redis集成
 
 ### 消息队列相关

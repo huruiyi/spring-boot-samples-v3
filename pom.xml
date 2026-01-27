@@ -35,6 +35,8 @@
     <module>spring-boot-keycloak-oauth2-v2</module>
     <module>spring-boot-keycloak-oauth2-v3</module>
     <module>spring-boot-keycloak-resource-server</module>
+    <module>spring-boot-multiple-datasource</module>
+    <module>spring-boot-multiple-datasource-transaction</module>
     <module>spring-boot-openapi</module>
     <module>spring-boot-rabbitmq</module>
     <module>spring-boot-redis</module>

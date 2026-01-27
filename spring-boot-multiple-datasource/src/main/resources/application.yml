@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-boot-multiple-database
+
+  # 数据源配置
+  datasource:
+    # 用户数据库配置
+    user:
+      jdbc-url: jdbc:mysql://localhost:3306/db_user?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: fairy-vip
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        pool-name: UserHikariPool
+        minimum-idle: 5
+        maximum-pool-size: 20
+        connection-timeout: 30000
+        idle-timeout: 600000
+        max-lifetime: 1800000
+        connection-test-query: SELECT 1
+
+    # 订单数据库配置
+    order:
+      jdbc-url: jdbc:mysql://localhost:3306/db_order?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: fairy-vip
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        pool-name: OrderHikariPool
+        minimum-idle: 5
+        maximum-pool-size: 20
+        connection-timeout: 30000
+        idle-timeout: 600000
+        max-lifetime: 1800000
+        connection-test-query: SELECT 1
+
+# 日志配置
+logging:
+  level:
+    com.example: DEBUG
+    org.springframework.jdbc: DEBUG
