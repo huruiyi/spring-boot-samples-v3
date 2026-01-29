@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-boot-kafka-transaction
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      transaction-id-prefix: tx-app-  # ??????? transaction.id
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: tx-consumer-group
+      auto-offset-reset: earliest
+      isolation-level: read_committed  # ????????
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      ack-mode: manual  # ?????????????
