@@ -1,4 +1,4 @@
-package org.example.springbootkafkatransaction.config;
+package org.example.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

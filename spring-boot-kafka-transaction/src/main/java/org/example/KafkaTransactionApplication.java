@@ -1,13 +1,13 @@
-package org.example.springbootkafkatransaction;
+package org.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootKafkaTransactionApplication {
+public class KafkaTransactionApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootKafkaTransactionApplication.class, args);
+    SpringApplication.run(KafkaTransactionApplication.class, args);
   }
 
 }
